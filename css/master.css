@@ -1,0 +1,66 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+a
+{
+	color: #33c;
+	font-weight: bold;
+}
+
+body
+{
+	background: #fff;
+	color: #333;
+	font: 15px Arial, sans-serif;
+}
+
+#container
+{
+	margin: 0 auto;
+	padding: 20px 0 0;
+	width: 960px;
+}
+
+h1
+{
+	font-size: 30px;
+	margin: 0 10px;
+	padding: 0 0 10px;
+	text-align: center;
+}
+
+p
+{
+	background: #ffc;
+	border: 1px solid #999;
+	margin: 0 10px 20px;
+	padding: 10px;
+	text-align: center;
+}
+
+iframe
+{
+	margin: 0 10px 20px;
+}
+
+.photo
+{
+	width: 940px;
+}
+
+.column
+{
+	float: left;
+	width: 220px;
+}
+
+.clear
+{
+	clear: both;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+}
