@@ -17,7 +17,7 @@ see index.html
 
 ## Summary:
 
-original code by NATHAN SMITH; see (http://sonspring.com/journal/jquery-iframe-sizing)
+original code by NATHAN SMITH; see [http://sonspring.com/journal/jquery-iframe-sizing](http://sonspring.com/journal/jquery-iframe-sizing)
 
 The plugin will resize an iframe to the height of its contents
 
@@ -49,8 +49,8 @@ See specific license for any other code included, i.e. jquery
 ## Changelog:
 
 * 1.0.0   2010-10-22  Initial release
-** converted code to plugin
-** match on specified selector instead of all iframes on page
+> converted code to plugin
+> match on specified selector instead of all iframes on page
 
 
 ## TODO List:
