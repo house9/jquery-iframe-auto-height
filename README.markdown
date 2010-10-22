@@ -49,8 +49,10 @@ See specific license for any other code included, i.e. jquery
 ## Changelog:
 
 * 1.0.0   2010-10-22  Initial release
-> converted code to plugin
-> match on specified selector instead of all iframes on page
+
+> * converted code to plugin
+
+> * match on specified selector instead of all iframes on page
 
 
 ## TODO List:
