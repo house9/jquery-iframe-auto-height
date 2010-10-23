@@ -63,4 +63,4 @@ See specific license for any other code included, i.e. jquery
 
 ## Issues 
 
-TODO: link to blog post?
+If you come across issues feel free to post them in the comments [here](http://house9.blogspot.com/2010/10/jquery-iframe-auto-height-plugin.html)
