@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>jQuery &raquo; iFrame Sizing</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/master.css" />
+    <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.iframe-auto-height.plugin.js"></script>
+  </head>
+  <body>
+    <div id="container">
+    	<h1>
+    		jQuery &raquo; iFrame Sizing
+    	</h1>
+    	<p>
+    		Back to <a href="index.html">index</a>
+    	</p>
+    	<p>
+            Test Chrome with tall iframes
+    	</p>
+
+    	<div class="clear">&nbsp;</div>
+
+    	<iframe src="iframe_3.html" width="600" scrolling="no" frameborder="0"></iframe>
+
+    	<div class="clear">&nbsp;</div>
+        
+        <div>
+            A footer
+        </div>
+    </div>
+    <!-- end #container -->
+        
+    <script type="text/javascript">
+      // match all iframes / use jQuery or alias $
+      jQuery('iframe').iframeAutoHeight();
+    </script>
+
+  </body>
+</html>

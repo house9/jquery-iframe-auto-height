@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>jQuery &raquo; iFrame Sizing</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/master.css" />
+    <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.iframe-auto-height.plugin.js"></script>
+    <style type="text/css">
+        iframe {
+            margin: 0px 0px 0px 0px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+    	<h1>
+    		jQuery &raquo; iFrame Sizing
+    	</h1>
+    	<p>
+    		Back to <a href="index.html">index</a>
+    	</p>
+
+    	<div class="clear">&nbsp;</div>
+
+        <table style="width: 100%" cellpadding="0" cellspacing="0" border="1">
+            <tr>
+                <td colspan="3">
+                    A table header row
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <iframe src="iframe_6.html" width="300" scrolling="no" frameborder="0"></iframe>
+                </td>
+                <td valign="top">
+                    &nbsp;
+                </td>
+                <td valign="top">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>                  
+                </td>                
+            </tr>
+            <tr>
+                <td colspan="3" style="background-color: #000; color: #fff">
+                    A table footer row
+                </td>
+            </tr>            
+        </table>
+
+    	<div class="clear">&nbsp;</div>
+        
+        <div>
+            A footer
+        </div>
+    </div>
+    <!-- end #container -->
+        
+    <script type="text/javascript">
+      // match all iframes / use jQuery or alias $
+      jQuery('iframe').iframeAutoHeight();
+    </script>
+
+  </body>
+</html>
