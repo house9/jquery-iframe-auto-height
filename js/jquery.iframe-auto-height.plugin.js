@@ -10,7 +10,7 @@
     $.fn.iframeAutoHeight = function (options) {
         // set default option values
         var options = $.extend({
-            heightOffset: 0
+            heightOffset: 0, callback: function(newHeight){}
         }, options);
 
         // iterate over the matched elements passed to the plugin
@@ -43,6 +43,7 @@
                 // Set inline style to equal the body height of the iframed content plus a little
                 var newHeight = iframe.contentWindow.document.body.offsetHeight + options.heightOffset;
                 iframe.style.height = newHeight + 'px';
+                options.callback({newFrameHeight:newHeight});
             }
 
         }); // end
