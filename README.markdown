@@ -49,7 +49,12 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.2.0 / 2011-07-08 
+
+* If the iframe document is read in quirks mode, fixed a problem with IE not applying the correct height.
+
 1.1.0 / 2011-05-29 
+
 * added the ability to pass in a callback function
 
 
@@ -58,6 +63,12 @@ See specific license for any other code included, i.e. jquery
 * converted code to plugin
 * match on specified selector instead of all iframes on page
 
+## Authors
+
+* NATHAN SMITH (http://sonspring.com/)
+* Jesse House (https://github.com/house9)
+* aaron manela (https://github.com/aaronmanela)
+* Hideki Abe (https://github.com/hideki-a)
 
 ## TODO List:
 

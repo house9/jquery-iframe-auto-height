@@ -5,11 +5,12 @@
     NATHAN SMITH (original code)
     Jesse House (converted to plugin)
     aaron manela (https://github.com/aaronmanela)
+    Hideki Abe (https://github.com/hideki-a)
     
     File: jquery.iframe-auto-height.plugin.js
     Description: when the page loads set the height of an iframe based on the height of its contents
     Remarks: original code from http://sonspring.com/journal/jquery-iframe-sizing    
-    Version: 1.1.0 - see README: http://github.com/house9/jquery-iframe-auto-height
+    Version: 1.2.0 - see README: http://github.com/house9/jquery-iframe-auto-height
 */
 (function ($) {
     $.fn.iframeAutoHeight = function (options) {
