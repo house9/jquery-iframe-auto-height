@@ -48,6 +48,8 @@
             function resizeHeight(iframe) {
                 // Set inline style to equal the body height of the iframed content plus a little
                 var newHeight;
+                // Webkit Fix: Reset iframe height to 0 to force new frame size to fit window properly
+                iframe.style.height = '0px';
                 if(iframe.contentWindow.document.compatMode && 'ActiveXObject' in window && 'function' === typeof window.ActiveXObject) {
                     // IE Quirks mode
                     newHeight = iframe.contentWindow.document.body.scrollHeight + options.heightOffset;
