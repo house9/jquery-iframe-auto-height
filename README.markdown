@@ -28,6 +28,8 @@ will NOT work if the iframe contains a page from another domain
 When viewing code locally (file:///) Google chrome will throw errors, 
 works fine in Firefox locally and should work
 ok in all browsers when served from the same domain. 
+if you have ruby installed you can run ruby webrick.rb from the root of this directory
+then using Google chrome go to http://localhost:3000/index.html
 
 with IE8 it seems better to not specify the height attribute on the iframe
 
@@ -49,6 +51,10 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.3.0 / 2011-07-17
+
+* fix issue on Webkit (Google Chrome & Safari) when tall iframe links to short iframe
+
 1.2.0 / 2011-07-08 
 
 * If the iframe document is read in quirks mode, fixed a problem with IE not applying the correct height.
@@ -69,6 +75,7 @@ See specific license for any other code included, i.e. jquery
 * Jesse House (https://github.com/house9)
 * aaron manela (https://github.com/aaronmanela)
 * Hideki Abe (https://github.com/hideki-a)
+* Patrick Clark (https://github.com/hellopat)
 
 ## TODO List:
 
