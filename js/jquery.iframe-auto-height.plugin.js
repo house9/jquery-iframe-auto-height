@@ -11,7 +11,7 @@
     File: jquery.iframe-auto-height.plugin.js
     Description: when the page loads set the height of an iframe based on the height of its contents
     Remarks: original code from http://sonspring.com/journal/jquery-iframe-sizing    
-    Version: 1.3.0 - see README: http://github.com/house9/jquery-iframe-auto-height
+    Version: 1.3.1 - see README: http://github.com/house9/jquery-iframe-auto-height
 */
 (function ($) {
     $.fn.iframeAutoHeight = function (options) {
@@ -22,11 +22,14 @@
 
         // iterate over the matched elements passed to the plugin
         $(this).each(function () {
+          
             // Check if browser is Opera or Safari(Webkit so Chrome as well)
             if ($.browser.safari || $.browser.opera) {
                 // Start timer when loaded.
                 $(this).load(function () {
                     var iframe = this;
+                    // Reset iframe height to 0 to force new frame size to fit window properly
+                    iframe.style.height = '0px';                    
                     var delayedResize = function () {
                         resizeHeight(iframe);
                     };
@@ -49,8 +52,6 @@
             function resizeHeight(iframe) {
                 // Set inline style to equal the body height of the iframed content plus a little
                 var newHeight;
-                // Webkit Fix: Reset iframe height to 0 to force new frame size to fit window properly
-                iframe.style.height = '0px';
                 if(iframe.contentWindow.document.compatMode && 'ActiveXObject' in window && 'function' === typeof window.ActiveXObject) {
                     // IE Quirks mode
                     newHeight = iframe.contentWindow.document.body.scrollHeight + options.heightOffset;
