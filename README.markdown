@@ -26,10 +26,12 @@ The plugin will resize an iframe to the height of its contents
 will NOT work if the iframe contains a page from another domain
 
 When viewing code locally (file:///) Google chrome will throw errors, 
-works fine in Firefox locally and should work
-ok in all browsers when served from the same domain. 
-if you have ruby installed you can run ruby webrick.rb from the root of this directory
-then using Google chrome go to http://localhost:3000/index.html
+works fine in Firefox locally and should work ok in all browsers when served from the same domain. 
+
+if you have ruby installed you can run "ruby webrick.rb" from the root of this directory
+then using Google chrome go to http://localhost:3000/index.html, chrome still a little weird using localhost
+ruby webrick.rb --bind YOUR_IP --port 333
+seems to work better, where YOUR_IP is probably something like 192.168.0.12
 
 with IE8 it seems better to not specify the height attribute on the iframe
 
