@@ -1,0 +1,5 @@
+/*
+  Plugin: iframe autoheight jQuery Plugin 1.4.0
+  see README: http://github.com/house9/jquery-iframe-auto-height
+*/
+(function(a){a.fn.iframeAutoHeight=function(b){function c(a){window.console&&b.debug&&b.debug==!0&&console.log(a)}var b=a.extend({heightOffset:0,callback:function(a){},debug:!1},b);c(b),a(this).each(function(){function f(a){if(a.contentWindow.document.compatMode&&"ActiveXObject"in window&&"function"==typeof window.ActiveXObject){c("IE Quirks mode");return!0}return!1}function e(a){var d;f(a)?d=a.contentWindow.document.body.scrollHeight+b.heightOffset:d=a.contentWindow.document.body.offsetHeight+b.heightOffset,c("New Height: "+d),a.style.height=d+"px",b.callback({newFrameHeight:d})}c(this);if(a.browser.safari||a.browser.opera){c("browser is webkit or opera"),a(this).load(function(){var a=this;a.style.height="0px";var b=function(){e(a)};setTimeout(b,0)});var d=a(this).attr("src");a(this).attr("src",""),a(this).attr("src",d)}else a(this).load(function(){e(this)})})}})(jQuery)
