@@ -11,20 +11,27 @@
     File: jquery.iframe-auto-height.plugin.js
     Description: when the page loads set the height of an iframe based on the height of its contents
     Remarks: original code from http://sonspring.com/journal/jquery-iframe-sizing    
-    Version: 1.3.1 - see README: http://github.com/house9/jquery-iframe-auto-height
+    Version: 1.4.0 - see README: http://github.com/house9/jquery-iframe-auto-height
 */
 (function ($) {
     $.fn.iframeAutoHeight = function (options) {
+      
         // set default option values
         var options = $.extend({
-            heightOffset: 0, callback: function(newHeight){}
+            heightOffset: 0, 
+            callback: function(newHeight) {},
+            debug: false
         }, options);
+        debug(options);
 
         // iterate over the matched elements passed to the plugin
         $(this).each(function () {
-          
-            // Check if browser is Opera or Safari(Webkit so Chrome as well)
+            debug(this);
+            
+            // Check if browser is Opera or Safari (Webkit really, so includes Chrome)
             if ($.browser.safari || $.browser.opera) {
+                debug("browser is webkit or opera");
+                
                 // Start timer when loaded.
                 $(this).load(function () {
                     var iframe = this;
@@ -52,16 +59,32 @@
             function resizeHeight(iframe) {
                 // Set inline style to equal the body height of the iframed content plus a little
                 var newHeight;
-                if(iframe.contentWindow.document.compatMode && 'ActiveXObject' in window && 'function' === typeof window.ActiveXObject) {
-                    // IE Quirks mode
+                if (isQuirksMode(iframe)) {
                     newHeight = iframe.contentWindow.document.body.scrollHeight + options.heightOffset;
                 } else {
                     newHeight = iframe.contentWindow.document.body.offsetHeight + options.heightOffset;
                 }
+                debug("New Height: " + newHeight);
                 iframe.style.height = newHeight + 'px';
                 options.callback({newFrameHeight:newHeight});
             }
-
-        }); // end
-    }
-})(jQuery);
+            
+            function isQuirksMode(iframe) {
+                if (iframe.contentWindow.document.compatMode && 'ActiveXObject' in window && 'function' === typeof window.ActiveXObject) {
+                    debug("IE Quirks mode");
+                    return true;
+                }
+                // else
+                return false;
+            }
+            
+        }); // $(this).each(function () {
+        
+        // logging
+        function debug(message) {
+            if (window.console && options.debug && options.debug == true) {
+                console.log(message);
+            }
+        }        
+    } // $.fn.iframeAutoHeight = function (options) {
+})(jQuery); // (function ($) {
