@@ -9,7 +9,7 @@ options = {}
  
 # Parse options
 optparse = OptionParser.new do|opts|
-    opts.banner = "Usage: websrv.rb [options]"
+  opts.banner = "Usage: websrv.rb [options]"
  
 	options[:port] = 3000
 	opts.on( '-p', '--port PORT', 'Port Number (default 3000)' ) do |port|

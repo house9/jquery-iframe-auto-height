@@ -6,6 +6,7 @@ GEM
     jslint (1.1.1)
       json
     json (1.5.3)
+    kramdown (0.13.3)
     multi_json (1.0.3)
     uglifier (1.0.0)
       execjs (>= 0.3.0)
@@ -16,4 +17,5 @@ PLATFORMS
 
 DEPENDENCIES
   jslint (~> 1.1.1)
+  kramdown
   uglifier

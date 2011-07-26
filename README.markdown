@@ -71,7 +71,6 @@ See specific license for any other code included, i.e. jquery
 
 * added the ability to pass in a callback function
 
-
 1.0.0 / 2010-10-22 / Initial release
 
 * converted code to plugin
@@ -87,8 +86,26 @@ See specific license for any other code included, i.e. jquery
 
 ## TODO List:
 
-* run jslint
 * more testing
+
+## Patches:
+
+if you have ruby installed you might want to utilize some of these tools, 
+first run `bundle` to install needed gems
+
+webrick for testing webkit browsers, using localhost and file:/// are problematic,
+instead fire up webrick use your local machines ip address and any port you want
+
+`ruby webrick.rb --port 3333 --bind 192.168.0.5`
+
+jslint checking, currently there is 1 error and it has a comment on that line // fails jslint
+
+`jslint js/jquery.iframe-auto-height.plugin.js`
+
+minify the library, first bump the version number in minify.rb then run the script, 
+this will drop the new minified file into the release directory
+
+`ruby minify.rb`
 
 
 ## Issues 
