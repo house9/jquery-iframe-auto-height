@@ -98,7 +98,7 @@ instead fire up webrick use your local machines ip address and any port you want
 
 `ruby webrick.rb --port 3333 --bind 192.168.0.5`
 
-jslint checking, currently there is 1 error and it has a comment on that line // fails jslint
+jslint checking
 
 `jslint js/jquery.iframe-auto-height.plugin.js`
 

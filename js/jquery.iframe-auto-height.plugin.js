@@ -39,7 +39,7 @@
     $(this).each(function () {
 
       function hasActiveX() {
-        return ('ActiveXObject' in window); // ===> fails jslint        
+        return (typeof window.ActiveXObject !== "undefined");
       }
 
       // isQuirksMode
