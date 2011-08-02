@@ -39,10 +39,17 @@ with IE8 it seems better to not specify the height attribute on the iframe
 
 so far tested on 
 
-* IE8 on windows
-* Firefox 3.6 on windows
-* Chrome 6 on windows
-* Firefox 3.6 on Mac
+* IE6 on windows XP
+* IE8 on windows XP
+* IE9 on windows Vista
+* Firefox 5 on windows XP (and older, i.e. 4.6)
+* Chrome 13 on windows XP
+* Firefox 5.1 on Mac (and older, i.e. 3.6)
+* Chrome 13 on Mac
+* Safari 5 on Mac
+* Opera 11.5 on Mac
+* Firefox 4 on Ubuntu 11.04
+* Chrome 11 on Ubuntu 11.04
 
 
 ## License:
@@ -86,7 +93,7 @@ See specific license for any other code included, i.e. jquery
 
 ## TODO List:
 
-* more testing
+* automated tests
 
 ## Patches:
 
@@ -107,6 +114,9 @@ this will drop the new minified file into the release directory
 
 `ruby minify.rb`
 
+## Known Issues 
+
+* Chrome (Mac and Windows) sometimes has additional buffer on the bottom of iframes when page initially loads
 
 ## Issues 
 
