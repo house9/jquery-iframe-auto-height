@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>jQuery &raquo; iFrame Sizing Dynamic</title>
+    <link rel="stylesheet" type="text/css" media="all" href="css/master.css" />
+    <script type="text/javascript" src="js/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="js/jquery.iframe-auto-height.plugin.js"></script>
+    <!-- script type="text/javascript" src="release/jquery.iframe-auto-height.plugin.1.4.1.min.js"></script -->    
+    
+    <script>
+      $(document).ready(function () {
+        
+        $("#load-iframe-link").click(function () {
+          $("<iframe />").attr("src", "iframe_2.html").attr("frameborder", 0).attr("width", "750px").attr("height", "200px").appendTo("#iframe-container");
+          $('iframe').iframeAutoHeight({heightOffset: 40});          
+        });
+        
+        $("#remove-iframe-link").click(function () {
+          $("#iframe-container iframe").remove();
+        });
+        
+        $("#change-iframe-link").click(function () {
+          $("#iframe-container iframe").attr("src", "iframe_6.html");
+        });                
+        
+      });
+    </script>    
+  </head>
+  <body>
+    <div id="container">
+    	<h1>
+    		jQuery &raquo; iFrame Sizing Dynamic
+    	</h1>
+
+    	<div style="margin-top: 20px">
+    	  <a href="javascript: void(0);" id="load-iframe-link">Load iframe</a> | 
+    	  <a href="javascript: void(0);" id="remove-iframe-link">Remove iframe</a> | 
+    	  <a href="javascript: void(0);" id="change-iframe-link">Change iframe</a> |     	  
+    	</div>
+    	
+      <div style="height: 60px">
+        &nbsp;
+      </div>
+      
+      <div id="iframe-container" style="border:1px solid black; background-color:gray">
+        <!-- load iframe here -->
+      </div>    	
+
+    	<div class="clear">&nbsp;</div>
+    	
+    </div><!-- end #container -->
+       
+    <br />
+  </body>
+</html>
