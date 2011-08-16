@@ -55,8 +55,7 @@
       // resizeHeight
       function resizeHeight(iframe) {
         // Set inline style to equal the body height of the iframed content plus a little
-        var frameDoc = iframe.contentWindow.document;
-        var newHeight = Math.max($(frameDoc).height(), $(frameDoc.body).height()) + options.heightOffset;
+        var newHeight = $(iframe.contentWindow.document.body).height() + options.heightOffset;
         
         debug("New Height: " + newHeight);
         iframe.style.height = newHeight + 'px';
