@@ -46,10 +46,9 @@
         // Set inline style to equal the body height of the iframed content plus a little
         var newHeight = $(iframe.contentWindow.document.body).height() + options.heightOffset;
 
-        if ( newHeight < options.minHeight)
-  		{
-			newHeight = options.minHeight + options.heightOffset;
-		}
+        if (newHeight < options.minHeight) {
+          newHeight = options.minHeight + options.heightOffset;
+        }
 
         debug("New Height: " + newHeight);
         iframe.style.height = newHeight + 'px';
