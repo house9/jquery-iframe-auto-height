@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'uglifier'
 
-JQUERY_IFRAME_AUTO_HEIGHT_VERSION = "1.4.1"
+JQUERY_IFRAME_AUTO_HEIGHT_VERSION = "1.5.0"
 
 puts " "
 puts "Minify for version #{JQUERY_IFRAME_AUTO_HEIGHT_VERSION}"

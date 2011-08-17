@@ -90,6 +90,8 @@ See specific license for any other code included, i.e. jquery
 * aaron manela (https://github.com/aaronmanela)
 * Hideki Abe (https://github.com/hideki-a)
 * Patrick Clark (https://github.com/hellopat)
+* ChristineP2 (https://github.com/ChristineP2)
+* Mmjavellana (https://github.com/Mmjavellana)
 
 ## TODO List:
 
