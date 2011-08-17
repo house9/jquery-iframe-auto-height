@@ -38,21 +38,6 @@
 
     // iterate over the matched elements passed to the plugin
     $(this).each(function () {
-
-      function hasActiveX() {
-        return (typeof window.ActiveXObject !== "undefined");
-      }
-
-      // isQuirksMode
-      function isQuirksMode(iframe) {
-        if (iframe.contentWindow.document.compatMode && hasActiveX() && 'function' === typeof window.ActiveXObject) {
-          debug("IE Quirks mode");
-          return true;
-        }
-        // else
-        return false;
-      }      
-      
       // resizeHeight
       function resizeHeight(iframe) {
         // Reset iframe height to 0 to force new frame size to fit window properly
