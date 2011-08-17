@@ -22,6 +22,7 @@
     // set default option values
     var options = $.extend({
         heightOffset: 0, 
+        minHeight: 0, 
         callback: function (newHeight) {},
         debug: false
       }, spec);
@@ -61,6 +62,10 @@
         } else {
           newHeight = iframe.contentWindow.document.body.offsetHeight + options.heightOffset;
         }
+        if ( newHeight < options.minHeight)
+  		{
+			newHeight = options.minHeight + options.heightOffset;
+		}
         debug("New Height: " + newHeight);
         iframe.style.height = newHeight + 'px';
         options.callback({newFrameHeight: newHeight});
