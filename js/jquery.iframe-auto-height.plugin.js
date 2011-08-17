@@ -22,6 +22,7 @@
     // set default option values
     var options = $.extend({
         heightOffset: 0, 
+        minHeight: 0, 
         callback: function (newHeight) {},
         debug: false
       }, spec);
@@ -54,9 +55,17 @@
       
       // resizeHeight
       function resizeHeight(iframe) {
+        // Reset iframe height to 0 to force new frame size to fit window properly
+        iframe.style.height = '0px';       
+     
         // Set inline style to equal the body height of the iframed content plus a little
         var newHeight = $(iframe.contentWindow.document.body).height() + options.heightOffset;
-        
+
+        if ( newHeight < options.minHeight)
+  		{
+			newHeight = options.minHeight + options.heightOffset;
+		}
+
         debug("New Height: " + newHeight);
         iframe.style.height = newHeight + 'px';
         options.callback({newFrameHeight: newHeight});
@@ -70,9 +79,7 @@
         
         // Start timer when loaded.
         $(this).load(function () {
-          var iframe = this;
-          // Reset iframe height to 0 to force new frame size to fit window properly
-          iframe.style.height = '0px';                    
+          var iframe = this;             
           var delayedResize = function () {
             resizeHeight(iframe);
           };
