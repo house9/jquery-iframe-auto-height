@@ -38,34 +38,19 @@
 
     // iterate over the matched elements passed to the plugin
     $(this).each(function () {
-
-      function hasActiveX() {
-        return (typeof window.ActiveXObject !== "undefined");
-      }
-
-      // isQuirksMode
-      function isQuirksMode(iframe) {
-        if (iframe.contentWindow.document.compatMode && hasActiveX() && 'function' === typeof window.ActiveXObject) {
-          debug("IE Quirks mode");
-          return true;
-        }
-        // else
-        return false;
-      }      
-      
       // resizeHeight
       function resizeHeight(iframe) {
+        // Reset iframe height to 0 to force new frame size to fit window properly
+        iframe.style.height = '0px';       
+     
         // Set inline style to equal the body height of the iframed content plus a little
-        var newHeight;
-        if (isQuirksMode(iframe)) {
-          newHeight = iframe.contentWindow.document.body.scrollHeight + options.heightOffset;
-        } else {
-          newHeight = iframe.contentWindow.document.body.offsetHeight + options.heightOffset;
-        }
+        var newHeight = $(iframe.contentWindow.document.body).height() + options.heightOffset;
+
         if ( newHeight < options.minHeight)
   		{
 			newHeight = options.minHeight + options.heightOffset;
 		}
+
         debug("New Height: " + newHeight);
         iframe.style.height = newHeight + 'px';
         options.callback({newFrameHeight: newHeight});
@@ -79,9 +64,7 @@
         
         // Start timer when loaded.
         $(this).load(function () {
-          var iframe = this;
-          // Reset iframe height to 0 to force new frame size to fit window properly
-          iframe.style.height = '0px';                    
+          var iframe = this;             
           var delayedResize = function () {
             resizeHeight(iframe);
           };
