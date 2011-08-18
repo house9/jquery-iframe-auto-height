@@ -78,7 +78,7 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
-1.5.0 / 2011-08-17 (TODO: publish minified version)
+1.5.0 / 2011-08-18
 
 * add minHeight option, refactoring height calculation 
 
