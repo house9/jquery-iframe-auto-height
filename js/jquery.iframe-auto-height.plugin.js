@@ -16,7 +16,7 @@
   File: jquery.iframe-auto-height.plugin.js
   Description: when the page loads set the height of an iframe based on the height of its contents
   Remarks: original code from http://sonspring.com/journal/jquery-iframe-sizing  
-  Version: 1.5.0 - see README: http://github.com/house9/jquery-iframe-auto-height
+  see README: http://github.com/house9/jquery-iframe-auto-height
 */
 (function ($) {
   $.fn.iframeAutoHeight = function (spec) {
@@ -26,7 +26,8 @@
         heightOffset: 0, 
         minHeight: 0, 
         callback: function (newHeight) {},
-        debug: false
+        debug: false,
+        diagnostics: false // used for development only
       }, spec);
     
     // logging
@@ -35,19 +36,41 @@
         console.log(message);
       }
     }    
+
+    // not used by production code
+    function showDiagnostics(iframe, calledFrom) {
+      debug("Diagnostics from '" + calledFrom + "'");      
+      try {
+        debug("  " + $(iframe, window.top.document).contents().find('body')[0].scrollHeight + " for ...find('body')[0].scrollHeight");                  
+        debug("  " + $(iframe.contentWindow.document).height() + " for ...contentWindow.document).height()");
+        debug("  " + $(iframe.contentWindow.document.body).height() + " for ...contentWindow.document.body).height()");        
+      } catch (ex) {
+        // ie fails when called during for each, ok later on
+        // probably not an issue if called in a document ready block         
+        debug("  unable to check in this state");
+      }
+      debug("End diagnostics -> results vary by browser and when diagnostics are requested");
+    }
     
+    // show all option values
     debug(options);    
 
+    // ******************************************************
     // iterate over the matched elements passed to the plugin
     $(this).each(function () {
+      // for use by webkit only
+      var loadCounter = 0;
+            
       // resizeHeight
       function resizeHeight(iframe) {
-        // Reset iframe height to 0 to force new frame size to fit window properly
-        iframe.style.height = '0px';       
+        if (options.diagnostics) {
+          showDiagnostics(iframe, "resizeHeight");
+        }     
      
-        // Set inline style to equal the body height of the iframed content plus a little
-        var newHeight = $(iframe.contentWindow.document.body).height() + options.heightOffset;
-
+        // get the iframe body height and set inline style to that plus a little
+        var $body = $(iframe, window.top.document).contents().find('body');
+        var newHeight = $body[0].scrollHeight + options.heightOffset;
+        
         if (newHeight < options.minHeight) {          
           debug("new height is less than minHeight");
           newHeight = options.minHeight + options.heightOffset;
@@ -58,7 +81,11 @@
         options.callback({newFrameHeight: newHeight});
       }
       
-      debug(this);
+      // debug me
+      debug(this);    
+      if (options.diagnostics) {
+        showDiagnostics(this, "each iframe");
+      }      
       
       // Check if browser is Opera or Safari (Webkit really, so includes Chrome)
       if ($.browser.safari || $.browser.opera) {
@@ -66,11 +93,21 @@
         
         // Start timer when loaded.
         $(this).load(function () {
-          var iframe = this;             
+          var delay = 0;
+          var iframe = this;  
+          // Reset iframe height to 0 to force new frame size to fit window properly          
+          iframe.style.height = '0px';                     
           var delayedResize = function () {
             resizeHeight(iframe);
           };
-          setTimeout(delayedResize, 0);
+          
+          if (loadCounter === 0) {
+            delay = 500; // delay the first one
+          }
+          
+          debug("load delay: " + delay);
+          setTimeout(delayedResize, delay);
+          loadCounter++;          
         });
 
         // Safari and Opera need a kick-start.
