@@ -55,17 +55,19 @@ with IE8 it seems better to not specify the height attribute on the iframe
 
 so far tested on 
 
-* IE6 on windows XP
-* IE8 on windows XP
-* IE9 on windows Vista
-* Firefox 5 on windows XP (and older, i.e. 4.6)
-* Chrome 13 on windows XP
-* Firefox 5.1 on Mac (and older, i.e. 3.6)
-* Chrome 13 on Mac
-* Safari 5 on Mac
-* Opera 11.5 on Mac
-* Firefox 4 on Ubuntu 11.04
-* Chrome 11 on Ubuntu 11.04
+* IE6 on windows XP (1.4.1, 1.5.0)
+* IE8 on windows XP (1.4.1, 1.5.0)
+* IE9 on windows Vista/W7 (1.4.1, 1.5.0)
+* Firefox 5 on windows XP (1.4.1, 1.5.0)
+* Firefox 6 on W7 (1.5.0)
+* Chrome 13 on windows XP (1.4.1, 1.5.0)
+* Firefox 5.1 on Mac (1.4.1, 1.5.0)
+* Firefox 6.0 on Mac (1.5.0)
+* Chrome 13 on Mac (1.4.1, 1.5.0)
+* Safari 5 on Mac (1.4.1, 1.5.0)
+* Opera 11.5 on Mac (1.4.1)
+* Firefox 4 on Ubuntu 11.04 (1.4.1)
+* Chrome 11 on Ubuntu 11.04 (1.4.1)
 
 
 ## License:
@@ -138,7 +140,7 @@ this will drop the new minified file into the release directory
 
 ## Known Issues 
 
-* Chrome (Mac and Windows) sometimes has additional buffer on the bottom of iframes when page initially loads
+* N/A
 
 ## Issues 
 
