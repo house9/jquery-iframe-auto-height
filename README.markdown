@@ -12,13 +12,16 @@
 
 code can be called from within $(document).ready or after iframes are declared in markup
 
-```<script>
+```
+<!-- with document ready, most likely in the html head -->
+<script>
   $(document).ready(function () {
     $('iframe').iframeAutoHeight({debug: true});  
   });
-</script>```
+</script>
 
-```<iframe src="my_iframe.html" class="auto-height" scrolling="no" frameborder="0"></iframe>
+<!-- inline, after the iframe -->
+<iframe src="my_iframe.html" class="auto-height" scrolling="no" frameborder="0"></iframe>
 <script>
   $('iframe.auto-height').iframeAutoHeight({minHeight: 240});
 </script>
