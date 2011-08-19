@@ -3,7 +3,7 @@
 ## Usage:
 
 * include jquery in your page
-* include the latest version from the [release directory](./release); minified or standard
+* include the latest version from the [release directory](release); minified or standard
 * use the variable jQuery or its alias $ and pass a selector that matches one or more iframes
 
 `jQuery('iframe').iframeAutoHeight();` will resize all iframes on the page
