@@ -1,0 +1,7 @@
+<%= header("medium content") %>
+<p>
+  Link to: <%= link_to "Small", :action => "small" %> | <%= link_to "Large", :action => "large" %>
+</p>
+<% (1..3).each do |n| %>
+  <%= render :partial => "shared/paragraph" %>
+<% end %>
