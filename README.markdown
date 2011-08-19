@@ -11,7 +11,7 @@
 `$('iframe.photo').iframeAutoHeight();` will resize only iframes with the css class photo
 
 code can be called from within $(document).ready or after iframes are declared in markup
-see index.html
+TODO: examples
 
 ### Options
 
@@ -41,19 +41,14 @@ original code by NATHAN SMITH; see [http://sonspring.com/journal/jquery-iframe-s
 
 The plugin will resize an iframe to the height of its contents
 
-will NOT work if the iframe contains a page from another domain
+Will NOT work if the iframe contains a page from another domain
 
-When viewing code locally (file:///) Google chrome will throw errors, 
-works fine in Firefox locally and should work ok in all browsers when served from the same domain. 
+When viewing code locally, i.e. file:///, Google chrome will throw security errors; 
+Works fine in Firefox locally and should work ok in all browsers when served from the same domain. 
 
-if you have ruby installed you can run "ruby webrick.rb" from the root of this directory
-then using Google chrome go to http://localhost:3000/index.html, chrome still a little weird using localhost
-ruby webrick.rb --bind YOUR_IP --port 333
-seems to work better, where YOUR_IP is probably something like 192.168.0.12
+Current Version: 1.5.0
 
-with IE8 it seems better to not specify the height attribute on the iframe
-
-so far tested on 
+All testing is done manually:
 
 * IE6 on windows XP (1.4.1, 1.5.0)
 * IE8 on windows XP (1.4.1, 1.5.0)
@@ -107,13 +102,13 @@ See specific license for any other code included, i.e. jquery
 
 ## Authors
 
-* NATHAN SMITH (http://sonspring.com/)
-* Jesse House (https://github.com/house9)
-* aaron manela (https://github.com/aaronmanela)
-* Hideki Abe (https://github.com/hideki-a)
-* Patrick Clark (https://github.com/hellopat)
-* ChristineP2 (https://github.com/ChristineP2)
-* Mmjavellana (https://github.com/Mmjavellana)
+NATHAN SMITH (http://sonspring.com/)
+Jesse House (https://github.com/house9)
+aaron manela (https://github.com/aaronmanela)
+Hideki Abe (https://github.com/hideki-a)
+Patrick Clark (https://github.com/hellopat)
+ChristineP2 (https://github.com/ChristineP2)
+Mmjavellana (https://github.com/Mmjavellana)
 
 ## TODO List:
 
@@ -131,7 +126,7 @@ instead fire up webrick use your local machines ip address and any port you want
 
 jslint checking
 
-`jslint js/jquery.iframe-auto-height.plugin.js`
+`jslint demo_on_rails/app/assets/javascripts/src/jquery.iframe-auto-height.plugin.js`
 
 minify the library, first bump the version number in minify.rb then run the script, 
 this will drop the new minified file into the release directory
@@ -140,8 +135,28 @@ this will drop the new minified file into the release directory
 
 ## Known Issues 
 
-* N/A
+* with IE8 it seems better to not specify the height attribute on the iframe
 
 ## Issues 
 
 If you come across issues feel free to post them in the comments [here](http://house9.blogspot.com/2010/10/jquery-iframe-auto-height-plugin.html) or use the 'Issues' tab above (github)
+
+
+
+- change minify.rb to releaser.rb
+  - copy non-minified version as well
+  - version.rb
+    - add authors array
+    - and version info in this class
+  - auto-update README for author and version
+- update README / dev-patch
+  - location of source file
+  - running from demo
+  - running from demo_on_rails 
+- more examples in the rails app
+- update all .html files in demo to point to release or assets
+
+
+
+
+
