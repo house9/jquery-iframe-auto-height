@@ -3,7 +3,7 @@
 ## Usage:
 
 * include jquery in your page
-* include the latest version from the [release directory](release); minified or standard
+* include the latest version from the [release directory](https://github.com/house9/jquery-iframe-auto-height/tree/master/release); minified or standard
 * use the variable jQuery or its alias $ and pass a selector that matches one or more iframes
 
 `jQuery('iframe').iframeAutoHeight();` will resize all iframes on the page
@@ -129,26 +129,27 @@ See specific license for any other code included, i.e. jquery
 
 ## Patches:
 
-The 'master' source file is located in the demo_on_rails directory [here](./demo_on_rails/app/assets/javascripts/src/jquery.iframe-auto-height.plugin.js)
-All html files in the [demo directory](xxx) actually use the 'master' source javascript files which live in the 
+The 'master' source file is located in the demo_on_rails directory [here](https://github.com/house9/jquery-iframe-auto-height/tree/master/demo_on_rails/app/assets/javascripts/src/jquery.iframe-auto-height.plugin.js)
+All html files in the [demo directory](https://github.com/house9/jquery-iframe-auto-height/tree/master/demo) point to this 'master' file.
+When modifying the code you can view changes in the static html files in demo or fire up the rails app in demo_on_rails.
 
-
-if you have ruby installed you might want to utilize some of these tools, 
-first run `bundle` to install needed gems
-
-webrick for testing webkit browsers, using localhost and file:/// are problematic,
-instead fire up webrick use your local machines ip address and any port you want
-
-`ruby webrick.rb --port 3333 --bind 192.168.0.5`
+If you have ruby installed you might want to utilize some of these tools, first run `bundle` to install needed gems
 
 jslint checking
 
 `jslint demo_on_rails/app/assets/javascripts/src/jquery.iframe-auto-height.plugin.js`
 
-minify the library, first bump the version number in minify.rb then run the script, 
-this will drop the new minified file into the release directory
+before the rails app was part of this project I used webrick for testing the static html files in webkit browsers, 
+using localhost and file:/// are problematic, webrick can use your local machines ip address and any port you want
 
-`ruby minify.rb`
+`ruby webrick.rb --port 3333 --bind 192.168.0.5 --docroot .`
+
+Building the release 
+
+First update the version.rb file, then run the ruby command. The script will put two files in the release directory, 
+one minified and one full. A small amount of search and replace takes place on the comment block for output files.
+
+`ruby releaser.rb`
 
 ## Known Issues 
 
@@ -158,12 +159,6 @@ this will drop the new minified file into the release directory
 
 If you come across issues feel free to post them in the comments [here](http://house9.blogspot.com/2010/10/jquery-iframe-auto-height-plugin.html) or use the 'Issues' tab above (github)
 
-
-
-- update README / dev-patch
-  - location of source file
-  - running from demo
-  - running from demo_on_rails 
 - more examples in the rails app
   - dynamic
   - xlarge
