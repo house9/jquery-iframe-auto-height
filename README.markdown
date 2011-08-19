@@ -143,18 +143,14 @@ If you come across issues feel free to post them in the comments [here](http://h
 
 
 
-- change minify.rb to releaser.rb
-  - copy non-minified version as well
-  - version.rb
-    - add authors array
-    - and version info in this class
-  - auto-update README for author and version
 - update README / dev-patch
   - location of source file
   - running from demo
   - running from demo_on_rails 
 - more examples in the rails app
-- update all .html files in demo to point to release or assets
+  - dynamic
+  - xlarge
+  - photo
 
 
 
