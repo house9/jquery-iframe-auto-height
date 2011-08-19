@@ -3,7 +3,7 @@
 ## Usage:
 
 * include jquery in your page
-* include js/jquery.iframe-auto-height.plugin.js or the latest minified version from release directory
+* include the latest version from the [release directory](./release); minified or standard
 * use the variable jQuery or its alias $ and pass a selector that matches one or more iframes
 
 `jQuery('iframe').iframeAutoHeight();` will resize all iframes on the page
@@ -78,7 +78,6 @@ All testing is done manually:
 * Firefox 4 on Ubuntu 11.04 (1.4.1)
 * Chrome 11 on Ubuntu 11.04 (1.4.1)
 
-
 ## License:
 
 The plugin: js/jquery.iframe-auto-height.plugin.js
@@ -116,19 +115,23 @@ See specific license for any other code included, i.e. jquery
 
 ## Authors
 
-NATHAN SMITH (http://sonspring.com/)
-Jesse House (https://github.com/house9)
-aaron manela (https://github.com/aaronmanela)
-Hideki Abe (https://github.com/hideki-a)
-Patrick Clark (https://github.com/hellopat)
-ChristineP2 (https://github.com/ChristineP2)
-Mmjavellana (https://github.com/Mmjavellana)
+* NATHAN SMITH (http://sonspring.com/)
+* Jesse House (https://github.com/house9)
+* aaron manela (https://github.com/aaronmanela)
+* Hideki Abe (https://github.com/hideki-a)
+* Patrick Clark (https://github.com/hellopat)
+* ChristineP2 (https://github.com/ChristineP2)
+* Mmjavellana (https://github.com/Mmjavellana)
 
 ## TODO List:
 
 * automated tests
 
 ## Patches:
+
+The 'master' source file is located in the demo_on_rails directory [here](./demo_on_rails/app/assets/javascripts/src/jquery.iframe-auto-height.plugin.js)
+All html files in the [demo directory](xxx) actually use the 'master' source javascript files which live in the 
+
 
 if you have ruby installed you might want to utilize some of these tools, 
 first run `bundle` to install needed gems
