@@ -1,7 +1,22 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+class Container
+  # constructor: () ->
+    
+  index: () ->
+    @standardIframe()
+    
+  index2: () ->
+    @standardIframe()
+    
+  # index3: () ->
 
-jQuery ->
-  $('iframe').iframeAutoHeight { debug: true }
-  
+
+  standardIframe: () ->
+    jQuery ->
+      $('iframe').iframeAutoHeight
+        debug: true
+        minHeight: 180  
+
+# ==============================
+# bind to the window
+window.App ?= {}
+window.App.Container = Container

@@ -1,7 +1,5 @@
 <%= header("large content") %>
-<p>
-  Link to: <%= link_to "Small", :action => "small" %> | <%= link_to "Medium", :action => "medium" %>
-</p>
+<%= render :partial => "shared/iframe_links" %>
 <% (1..6).each do |n| %>
   <%= render :partial => "shared/paragraph" %>
 <% end %>

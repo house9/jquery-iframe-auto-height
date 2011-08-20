@@ -23,6 +23,11 @@
     	  &nbsp;
     	</div>
     	<p>
+    		More: <%= link_to "Main", :controller => "containers", :action => "index" %> | 
+    		<%= link_to "Another Pic", :controller => "containers", :action => "index2" %> | 
+    		<%= link_to "Dynamic", :controller => "containers", :action => "index3" %>
+    	</p>    	    	
+    	<p>
     		Original code by Nathan Smith, see <a href="http://sonspring.com/journal/jquery-iframe-sizing">original article</a>.
     	</p>    	
     	<div class="clear">
@@ -30,5 +35,20 @@
     	</div>
     	    	
     </div>
+    
+    <script>
+      $(document).ready(function () {
+        var instance;
+        if (window.App) {
+          if (window.App.<%= controller_name.classify %>) {
+            instance = new window.App.<%= controller_name.classify %>();
+            if (instance.<%= action_name %>) {
+              instance.<%= action_name %>();
+            } 
+          }
+        }
+      });
+    </script>
+    
   </body>
 </html>

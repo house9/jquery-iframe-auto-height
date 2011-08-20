@@ -1,0 +1,57 @@
+
+<p>
+  <a href="javascript: void(0);" id="load-static-large-link">Load large</a> |     	        
+  <a href="javascript: void(0);" id="load-dynamic-medium-link">Dynamic medium</a> |   
+  <a href="javascript: void(0);" id="remove-dynamic-iframe-link">Remove iframe</a>
+</p>
+
+<div id="iframe-container" style="border:1px solid black; background-color:gray">
+  <!-- load iframe here -->
+  Append Iframes here
+</div>    	
+
+<div class="clear" style="height: 30px">
+  &nbsp;
+</div>
+
+
+<div id="static-container" style="border:1px solid black; background-color:gray">
+  Iframe with changing src
+  <iframe id="iframe-loader" src="/iframe_content/pic1" class="photo" scrolling="no" frameborder="0"></iframe>  
+</div>    	
+
+<div class="clear" style="height: 30px">
+  &nbsp;
+</div>
+
+<script>
+  $(document).ready(function () {
+    var counter = 0;
+
+    // static iframe
+    $('#iframe-loader').iframeAutoHeight();              
+    // click handling
+    $("#load-static-large-link").click(function () {
+      $("#iframe-loader").attr("src", "/iframe_content/large");
+    });                
+
+    // dynamic handling
+    $("#load-dynamic-medium-link").click(function () {
+      var id = "iframe-medium-" + counter;
+      $("<iframe />", {
+        src: "/iframe_content/medium",
+        id: id,
+        frameborder: 0,
+        "class": "photo"
+      }).appendTo("#iframe-container");
+      
+      $('#' + id).iframeAutoHeight({heightOffset: 40});          
+      counter++;
+    });
+    
+    $("#remove-dynamic-iframe-link").click(function () {
+      $("#iframe-container iframe").remove();
+    });
+    
+  });
+</script>    

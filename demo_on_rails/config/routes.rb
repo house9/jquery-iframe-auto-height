@@ -1,18 +1,16 @@
 DemoOnRails::Application.routes.draw do
+  
+  get "iframe_content/xsmall"
   get "iframe_content/small"
-
   get "iframe_content/medium"
-
   get "iframe_content/large"
-
+  get "iframe_content/xlarge"
+  get "iframe_content/xxlarge"  
   get "iframe_content/pic1"
-
   get "iframe_content/pic2"
-
-  get "iframe_content/very_long"
-
+  
+  get "containers/index3"  
   get "containers/index2"
-
   get "containers/index"
 
   # The priority is based upon order of creation:

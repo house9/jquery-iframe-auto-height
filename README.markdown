@@ -140,7 +140,7 @@ jslint checking
 `jslint demo_on_rails/app/assets/javascripts/src/jquery.iframe-auto-height.plugin.js`
 
 before the rails app was part of this project I used webrick for testing the static html files in webkit browsers, 
-using localhost and file:/// are problematic, webrick can use your local machines ip address and any port you want
+but using localhost and file:/// are problematic, webrick can use your local machine ip address and any port you want
 
 `ruby webrick.rb --port 3333 --bind 192.168.0.5 --docroot .`
 
@@ -158,11 +158,6 @@ one minified and one full. A small amount of search and replace takes place on t
 ## Issues 
 
 If you come across issues feel free to post them in the comments [here](http://house9.blogspot.com/2010/10/jquery-iframe-auto-height-plugin.html) or use the 'Issues' tab above (github)
-
-- more examples in the rails app
-  - dynamic
-  - xlarge
-  - photo
 
 
 

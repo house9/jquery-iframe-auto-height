@@ -1,2 +1,20 @@
-<h1>Containers#index2</h1>
-<p>Find me in app/views/containers/index2.html.erb</p>
+
+<div style="clear:both">
+  <div style="float: left; width: 280px">
+    <div class="p">
+      This content is inside the container page. The pic is in an iframe.
+    </div>
+    <% (1..3).each do |n| %>
+      <div class="p">
+        The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.        
+      </div>
+    <% end %>    
+  </div>
+  <div style="float: left">
+    <iframe src="/iframe_content/pic2" style="width: 660px" scrolling="no" frameborder="0"></iframe>    
+  </div>
+  <div style="clear:both; line-height: 0px; font-size: 0px">
+    &nbsp;
+  </div>
+</div>
