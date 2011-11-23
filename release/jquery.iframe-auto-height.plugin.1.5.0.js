@@ -71,6 +71,7 @@
      
         // get the iframe body height and set inline style to that plus a little
         var $body = $(iframe, window.top.document).contents().find('body');
+        iframe.style.height = options.minHeight + 'px';
         var newHeight = $body[0].scrollHeight + options.heightOffset;
         
         if (newHeight < options.minHeight) {          
