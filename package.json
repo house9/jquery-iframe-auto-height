@@ -1,0 +1,53 @@
+{
+    "name": "iframe-auto-height",
+    "version": "1.5.0",
+    "title": "jQuery.iframeAutoHeight()",
+    "author": {
+        "name": "Jesse House",
+        "url": "https://github.com/house9"
+    },
+    "licenses": [
+        {
+            "type": "The Unlicense",
+            "url": "http://unlicense.org"
+        }
+    ],
+    "dependencies": {
+        "jquery": "~1.4.3"
+    },
+    "description": "The plugin will resize an iframe to the height of its contents",
+    "keywords": [
+        "iframe",
+        "height"
+    ],
+    "homepage": "https://github.com/house9/jquery-iframe-auto-height",
+    "contributors": [
+        {
+            "name": "NATHAN SMITH",
+            "url": "http://sonspring.com/"
+        },
+        {
+            "name": "aaron manela",
+            "url": "https://github.com/aaronmanela"
+        },
+        {
+            "name": "Hideki Abe",
+            "url": "https://github.com/hideki-a"
+        },
+        {
+            "name": "Patrick Clark",
+            "url": "https://github.com/hellopat"
+        },
+        {
+            "name": "ChristineP2",
+            "url": "https://github.com/ChristineP2"
+        },
+        {
+            "name": "Mmjavellana",
+            "url": "https://github.com/Mmjavellana"
+        }                
+    ],
+    "files": [
+        "release/jquery.iframe-auto-height.js"
+    ]
+}

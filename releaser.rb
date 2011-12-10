@@ -8,6 +8,7 @@ puts "Release for #{Version::JQUERY_IFRAME_AUTO_HEIGHT_VERSION}"
 source_file_name = "demo_on_rails/app/assets/javascripts/src/jquery.iframe-auto-height.plugin.js"
 output_file_name_minified = "release/jquery.iframe-auto-height.plugin.#{Version::JQUERY_IFRAME_AUTO_HEIGHT_VERSION}.min.js"
 output_file_name_full = "release/jquery.iframe-auto-height.plugin.#{Version::JQUERY_IFRAME_AUTO_HEIGHT_VERSION}.js"
+output_file_name_no_version = "release/jquery.iframe-auto-height.js"
 
 def update_content(content)
   Version::TOKENS_AND_VALUES.each { |item| content.gsub!(item[:token], item[:value]) }
@@ -22,6 +23,8 @@ input = File.read(source_file_name)
 update_content(input)
 File.open(output_file_name_full, 'w') { |f| f.write(input) }
 puts "  created #{output_file_name_full}"
+File.open(output_file_name_no_version, 'w') { |f| f.write(input) }
+puts "  created #{output_file_name_no_version}"
 
 # ********************
 # minified, uglifier will rip out comments, so we put back some of them
