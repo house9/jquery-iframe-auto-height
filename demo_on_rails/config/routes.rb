@@ -9,6 +9,7 @@ DemoOnRails::Application.routes.draw do
   get "iframe_content/pic1"
   get "iframe_content/pic2"
   
+  get "containers/index4"
   get "containers/index3"  
   get "containers/index2"
   get "containers/index"

@@ -7,8 +7,11 @@ class Container
   index2: () ->
     @standardIframe()
     
-  # index3: () ->
-
+  index4: () ->
+    jQuery ->
+      $('iframe').iframeAutoHeight
+        debug: true
+        minHeight: 480
 
   standardIframe: () ->
     jQuery ->
