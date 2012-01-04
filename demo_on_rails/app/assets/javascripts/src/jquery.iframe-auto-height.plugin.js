@@ -76,7 +76,7 @@
         debug("New Height: " + newHeight);
         iframe.style.height = newHeight + 'px';
         
-        options.callback.apply($(iframe), {newFrameHeight: newHeight}); 
+        options.callback.apply($(iframe), [{newFrameHeight: newHeight}]); 
         //options.callback({newFrameHeight: newHeight});
       }
       
