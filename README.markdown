@@ -37,10 +37,8 @@ code can be called from within $(document).ready or after iframes are declared i
   * for example: 
   *  callback: function(callbackObject){
   *        alert(callbackObject.newFrameHeight+"|and the iframe href is:"+$(this).attr('src'));
-	*		}
-  * 
-  * 
-  * 
+  *        }
+  
 * debug: boolean
   * Default is false
   * Will log some internal information to the console, if available
