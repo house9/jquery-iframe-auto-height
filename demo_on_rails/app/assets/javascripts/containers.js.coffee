@@ -12,6 +12,20 @@ class Container
       $('iframe').iframeAutoHeight
         debug: true
         minHeight: 480
+        
+  index5: () ->
+    jQuery ->
+      $('#xsmall-iframe').iframeAutoHeight
+        debug: true
+        callback: (callbackObject) -> console.debug "CallBack: height='#{callbackObject.newFrameHeight}' / iframe-id='#{jQuery(this).attr('id')}'"
+
+      $('#small-iframe').iframeAutoHeight
+        debug: true
+        callback: (callbackObject) -> console.debug "CallBack: height='#{callbackObject.newFrameHeight}' / iframe-id='#{jQuery(this).attr('id')}'"
+
+      $('#medium-iframe').iframeAutoHeight
+        debug: true
+        callback: (callbackObject) -> console.debug "CallBack: height='#{callbackObject.newFrameHeight}' / iframe-id='#{jQuery(this).attr('id')}'"
 
   standardIframe: () ->
     jQuery ->
