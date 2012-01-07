@@ -167,7 +167,7 @@ one minified and one full. A small amount of search and replace takes place on t
 
 ## Issues 
 
-If you come across issues feel free to post them in the comments [here](http://house9.blogspot.com/2010/10/jquery-iframe-auto-height-plugin.html) or use the 'Issues' tab above (github)
+If you come across issues feel free to post them using the 'Issues' tab above (github)
 
 
 
