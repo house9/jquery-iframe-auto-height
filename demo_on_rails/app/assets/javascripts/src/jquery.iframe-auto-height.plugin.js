@@ -50,8 +50,11 @@
     debug(options);    
 
     // ******************************************************
-    // iterate over the matched elements passed to the plugin
-    $(this).each(function () {
+     // iterate over the matched elements passed to the plugin ; return will make it chainable
+   return this.each(function () {
+      
+      //var $this = $(this);
+     
       // for use by webkit only
       var loadCounter = 0;
             
@@ -72,7 +75,9 @@
 
         debug("New Height: " + newHeight);
         iframe.style.height = newHeight + 'px';
-        options.callback({newFrameHeight: newHeight});
+        
+        options.callback.apply($(iframe), [{newFrameHeight: newHeight}]); 
+        //options.callback({newFrameHeight: newHeight});
       }
       
       // debug me
