@@ -1,6 +1,6 @@
 class Version
 
-  JQUERY_IFRAME_AUTO_HEIGHT_VERSION = "1.5.0"
+  JQUERY_IFRAME_AUTO_HEIGHT_VERSION = "1.6.0"
 
   AUTHORS = [
     "NATHAN SMITH (http://sonspring.com/)",
@@ -9,7 +9,8 @@ class Version
     "Hideki Abe (https://github.com/hideki-a)",
     "Patrick Clark (https://github.com/hellopat)",
     "ChristineP2 (https://github.com/ChristineP2)",
-    "Mmjavellana (https://github.com/Mmjavellana)"        
+    "Mmjavellana (https://github.com/Mmjavellana)",
+    "yiqing-95 (https://github.com/yiqing-95)"
   ]
   
   AUTHOR_TOKEN = "[INSERT_AUTHOR_LIST]"

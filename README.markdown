@@ -70,6 +70,8 @@ Current Version: 1.5.0
 
 All testing is done manually:
 
+1.6.0 has not been tested, but the changes were minor
+
 * IE6 on windows XP (1.4.1, 1.5.0)
 * IE8 on windows XP (1.4.1, 1.5.0)
 * IE9 on windows Vista/W7 (1.4.1, 1.5.0)
@@ -132,6 +134,7 @@ See specific license for any other code included, i.e. jquery
 * Patrick Clark (https://github.com/hellopat)
 * ChristineP2 (https://github.com/ChristineP2)
 * Mmjavellana (https://github.com/Mmjavellana)
+* yiqing-95 (https://github.com/yiqing-95)
 
 ## TODO List:
 
