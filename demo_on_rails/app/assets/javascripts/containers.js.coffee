@@ -6,6 +6,9 @@ class Container
     
   index2: () ->
     @standardIframe()
+  
+  index6: () ->
+    @standardIframe()  
     
   index4: () ->
     jQuery ->

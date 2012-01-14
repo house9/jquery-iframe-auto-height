@@ -1,0 +1,13 @@
+<%= header("Form") %>
+<%= render :partial => "shared/iframe_links" %>
+<% (1..20).each do |n| %>
+  <%= render :partial => "shared/paragraph" %>
+<% end %>
+
+<%= form_tag 'form_1_confirm' do %>
+  <%= text_field_tag 'name' %>
+  <%= submit_tag 'Submit' %>
+<% end %>
+
+
+<%= render :partial => "shared/paragraph" %>

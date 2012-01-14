@@ -19,4 +19,12 @@ class IframeContentController < ApplicationController
   def very_long
   end
 
+  def form_1
+  end
+  
+  def no_body_tag
+    raise "TODO: implement view with no body and update js lib"
+    render :layout => false
+  end
+
 end

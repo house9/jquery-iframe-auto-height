@@ -8,7 +8,10 @@ DemoOnRails::Application.routes.draw do
   get "iframe_content/xxlarge"  
   get "iframe_content/pic1"
   get "iframe_content/pic2"
+  get "iframe_content/form_1"
+  post "iframe_content/form_1_confirm"
   
+  get "containers/index6"   
   get "containers/index5"  
   get "containers/index4"
   get "containers/index3"  
