@@ -31,14 +31,10 @@ code can be called from within $(document).ready or after iframes are declared i
 
 * callback: function
   * Default empty function 
-  * Optionally define a callback function (in this case inline) that will do something with the callbackObject.newFrameHeight value. This can for instance be used with easyXDM to alert another domain that the frame has changed height. (See http://github.com/oyvindkinsey/easyXDM.)
+  * Optionally define a callback function (in this case inline) that will do something with the callbackObject.newFrameHeight value. This can for instance be used with easyXDM to alert another domain that the frame has changed height.
   * Example: `$('iframe').iframeAutoHeight({callback: function(callbackObject) { alert(callbackObject.newFrameHeight);} });`
-  * you can also access the current iframe jquery wrapper object use this
-  * for example: 
-  * `callback: function(callbackObject) { `
-  * `  alert(callbackObject.newFrameHeight + " and the iframe href is:" + $(this).attr('src')); `
-  * `} `
-  
+  * you can also access the current iframe jquery wrapper object use the `this` keyword
+  * for example: `callback: function(callbackObject) { alert(callbackObject.newFrameHeight + " and the iframe href is:" + $(this).attr('src')); } `
 * debug: boolean
   * Default is false
   * Will log some internal information to the console, if available
@@ -55,7 +51,7 @@ code can be called from within $(document).ready or after iframes are declared i
   * Example: `$('iframe').iframeAutoHeight({minHeight: 200});` 
 * animate: boolean
   * Default is false
-  * Uses jquery animate with duration of 500 when resizing the iframe
+  * Uses [jquery animate](http://api.jquery.com/animate/) with duration of 500 when resizing the iframe
   * Example: `$('iframe').iframeAutoHeight({animate: true});` 
 
 
@@ -74,7 +70,7 @@ Current Version: 1.5.0
 
 All testing is done manually:
 
-1.6.0 and 1.7.0 have not been tested, but the changes were minor
+1.6.0 and 1.7.0 have not been officially tested, but the changes were minor
 
 * IE6 on windows XP (1.4.1, 1.5.0)
 * IE8 on windows XP (1.4.1, 1.5.0)
@@ -90,9 +86,16 @@ All testing is done manually:
 * Firefox 4 on Ubuntu 11.04 (1.4.1)
 * Chrome 11 on Ubuntu 11.04 (1.4.1)
 
+## Alternatives:
+
+You may want to consider one of these alternative solutions for your iframe resizing needs?
+
+* easyXDM, Resize iframe based on content (http://easyxdm.net/wp/2010/03/17/resize-iframe-based-on-content/)
+* jQuery resize plugin (http://benalman.com/projects/jquery-resize-plugin/)
+
 ## License:
 
-The plugin: js/jquery.iframe-auto-height.plugin.js
+The plugin: release/jquery.iframe-auto-height.plugin.js
 
 * [The Unlicense](http://unlicense.org) (aka: public domain) 
 
