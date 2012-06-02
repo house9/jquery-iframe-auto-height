@@ -75,6 +75,16 @@
         var $body = $(iframe, window.top.document).contents().find('body');
         var newHeight = $body[0].scrollHeight + options.heightOffset;
         
+        // Resolve height issue for mozilla page containing JavaScript.
+        if ($.browser.mozilla) {
+          debug("browser is mozilla");
+
+          var x = $(iframe.contentWindow.document).height();
+          if (newHeight < x) {
+            newHeight = x;
+          }
+        }
+
         if (newHeight < options.minHeight) {          
           debug("new height is less than minHeight");
           newHeight = options.minHeight + options.heightOffset;
