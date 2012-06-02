@@ -103,6 +103,10 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.7.1 / 2012-06-02
+
+* webkit browsers, don't set iframe.style.height to 0px on initial page load
+
 1.7.0 / 2012-06-02
 
 * adds the animate option

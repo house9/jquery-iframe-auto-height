@@ -66,6 +66,7 @@
         // get the iframe body height and set inline style to that plus a little
         var $body = $(iframe, window.top.document).contents().find('body');
         var newHeight = $body[0].scrollHeight + options.heightOffset;
+        debug(newHeight);
 
         if (newHeight < options.minHeight) {
           debug("new height is less than minHeight");
@@ -96,14 +97,18 @@
         $(this).load(function () {
           var delay = 0;
           var iframe = this;
-          // Reset iframe height to 0 to force new frame size to fit window properly
-          iframe.style.height = '0px';
+
           var delayedResize = function () {
             resizeHeight(iframe);
           };
 
           if (loadCounter === 0) {
-            delay = 500; // delay the first one
+            // delay the first one
+            delay = 500;
+          } else {
+            // Reset iframe height to 0 to force new frame size to fit window properly
+            // this is only an issue when going from large to small iframe, not executed on page load
+            iframe.style.height = options.minHeight + 'px';
           }
 
           debug("load delay: " + delay);
