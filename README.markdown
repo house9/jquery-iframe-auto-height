@@ -53,6 +53,10 @@ code can be called from within $(document).ready or after iframes are declared i
   * Unit is pixels
   * Sets the iframe height to this value if the calculated value is less
   * Example: `$('iframe').iframeAutoHeight({minHeight: 200});` 
+* animate: boolean
+  * Default is false
+  * Uses jquery animate with duration of 500 when resizing the iframe
+  * Example: `$('iframe').iframeAutoHeight({animate: true});` 
 
 
 ## Summary:
@@ -70,7 +74,7 @@ Current Version: 1.5.0
 
 All testing is done manually:
 
-1.6.0 has not been tested, but the changes were minor
+1.6.0 and 1.7.0 have not been tested, but the changes were minor
 
 * IE6 on windows XP (1.4.1, 1.5.0)
 * IE8 on windows XP (1.4.1, 1.5.0)
@@ -96,6 +100,10 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.7.0 / 2012-06-02
+
+* adds the animate option
+
 1.6.0 / 2012-01-07
 
 * callback function invoking now allows access to the iframe in the callback
@@ -135,6 +143,7 @@ See specific license for any other code included, i.e. jquery
 * ChristineP2 (https://github.com/ChristineP2)
 * Mmjavellana (https://github.com/Mmjavellana)
 * yiqing-95 (https://github.com/yiqing-95)
+* jcaspian (https://github.com/jcaspian)
 
 ## TODO List:
 

@@ -1,21 +1,22 @@
 class Container
   # constructor: () ->
-    
+
   index: () ->
     @standardIframe()
-    
+
   index2: () ->
     @standardIframe()
-  
+
   index6: () ->
-    @standardIframe()  
-    
+    @standardIframe()
+
   index4: () ->
     jQuery ->
       $('iframe').iframeAutoHeight
         debug: true
         minHeight: 480
-        
+        animate: true
+
   index5: () ->
     jQuery ->
       $('#xsmall-iframe').iframeAutoHeight
@@ -34,7 +35,7 @@ class Container
     jQuery ->
       $('iframe').iframeAutoHeight
         debug: true
-        minHeight: 180  
+        minHeight: 180
 
 # ==============================
 # bind to the window
