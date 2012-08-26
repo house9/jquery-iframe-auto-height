@@ -4,11 +4,11 @@
   "description": "jQuery plugin which will resize an iframe to the height of its contents. WARNING: will NOT work if the iframe contains a page from another domain.",
   "keywords": [ "iframe", "height" ],
   "jam": {
-    "main": "release/jquery.iframe-auto-height.1.5.0.js",
-    "include": { "release": ["README"] }
+    "main": "release/jquery.iframe-auto-height.plugin.1.5.0.js",
+    "include": [ "release/README", "release/jquery.iframe-auto-height.plugin.1.5.0.js" ],
     "dependencies": {
-      "jquery": ">1.4.2",
-    },
+      "jquery": ">1.4.2"
+    }
   },
   "github": "https://github.com/house9"
 }
