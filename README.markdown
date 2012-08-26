@@ -27,6 +27,10 @@ code can be called from within $(document).ready or after iframes are declared i
 </script>
 ```
 
+### Note
+
+* you can also install using jamjs - [http://jamjs.org/packages/#/details/jquery-iframe-auto-height](http://jamjs.org/packages/#/details/jquery-iframe-auto-height)
+
 ### Options
 
 * callback: function
