@@ -22,7 +22,9 @@
         callback: function (newHeight) {},
         animate: false,
         debug: false,
-        diagnostics: false // used for development only
+        diagnostics: false, // used for development only
+        resetToMinHeight: false,
+        fireOnResize: false
       }, spec);
 
     // logging
@@ -62,10 +64,20 @@
         if (options.diagnostics) {
           showDiagnostics(iframe, "resizeHeight");
         }
+        
+        // set the iframe size to minHeight so it'll get smaller on resizes in FF and IE
+        if(options.resetToMinHeight && options.resetToMinHeight === true) {
+          iframe.style.height = options.minHeight + 'px';        	
+        }
 
         // get the iframe body height and set inline style to that plus a little
         var $body = $(iframe, window.top.document).contents().find('body');
-        var newHeight = $body[0].scrollHeight + options.heightOffset;
+        var newHeight = options.heightOffset;
+        if($.browser.mozilla) {
+        	newHeight += iframe.contentDocument.documentElement.scrollHeight;
+        } else {
+        	newHeight += $body[0].scrollHeight + options.heightOffset;
+        }
         debug(newHeight);
 
         if (newHeight < options.minHeight) {
@@ -87,6 +99,14 @@
       debug(this);
       if (options.diagnostics) {
         showDiagnostics(this, "each iframe");
+      }
+      
+      // Resize the iframe when the browser is resized
+      if(options.fireOnResize && options.fireOnResize === true) {
+    	  var i = this;
+    	  $(window).resize(function() {
+              resizeHeight(i);
+          });
       }
 
       // Check if browser is Opera or Safari (Webkit really, so includes Chrome)
