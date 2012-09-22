@@ -184,7 +184,9 @@ See specific license for any other code included, i.e. jquery
 ## Changelog:
 1.8.0 / 2012-09-22
 
-* TODO
+* new option - resetToMinHeight
+* new option - triggerFunctions
+* new option - heightCalculationOverrides
 
 1.7.1 / 2012-06-02
 
@@ -265,7 +267,6 @@ one minified and one full. A small amount of search and replace takes place on t
 
 `ruby releaser.rb`
 
-TODO: publish to jam
 
 ## Known Issues 
 
