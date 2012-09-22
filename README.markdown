@@ -57,10 +57,21 @@ code can be called from within $(document).ready or after iframes are declared i
   * Default is false
   * Uses [jquery animate](http://api.jquery.com/animate/) with duration of 500 when resizing the iframe
   * Example: `$('iframe').iframeAutoHeight({animate: true});` 
+* resetToMinHeight: boolean
+  * Default is false
+  * hard set the iframe height to the minHeight before re-sizing
 * triggerFunctions: Array of functions
   * Default is an empty array
   * Optionally define 1 or more functions that will have access to the resize method
-  * can be used to resize the iframe from external events such as click or window resize - see example below
+  * can be used to resize the iframe from external events such as click or window resize - see examples below
+* heightCalculationOverrides: Array of 2 element arrays
+  * Default is an empty array
+  * Optionally re-define the height calculation method(s)
+  * override the default implementation or just override specific browsers
+  * Example: `$('iframe').iframeAutoHeight({strategyOverrides: [{ browser: 'mozilla', calculation: function () { return 2000; }}]);`
+  * The `browser` key should be one of 'webkit', 'mozilla', 'msie', 'opera' or 'default', see [http://api.jquery.com/jQuery.browser/](http://api.jquery.com/jQuery.browser/)
+  * The `calculation` key should be a function, usually with the signature `(iframe, $iframeBody, options, browser)`
+  * see more examples below
 
 ## Examples:
 
@@ -93,6 +104,32 @@ $('iframe').iframeAutoHeight({
 
 ```
 
+### heightCalculationOverrides
+```
+// override all browser calculations using default
+$('iframe').iframeAutoHeight({
+  debug: true,
+  heightCalculationOverrides: [{ 
+    browser: 'default', 
+    calculation: function (iframe, $iframeBody, options, browser) {
+      return 1000; 
+    }
+  }]
+});
+
+// mozilla seems to be problematic for some
+// this is the usual work around, but it breaks demo pages so not used in plugin
+$('iframe').iframeAutoHeight({
+  debug: true,
+  heightCalculationOverrides: [{ 
+    browser: 'mozilla', 
+    calculation: function (iframe, $iframeBody, options, browser) {
+      // since the jquery browser is passed in you can also check specific versions if desired
+      return iframe.contentDocument.documentElement.scrollHeight + options.heightOffset;
+    }
+  }]
+});
+```
 
 ## Summary:
 
@@ -110,6 +147,7 @@ Current Version: 1.5.0
 All testing is done manually:
 
 1.6.0 and 1.7.0 have not been officially tested, but the changes were minor
+1.8.0 has had minor testing
 
 * IE6 on windows XP (1.4.1, 1.5.0)
 * IE8 on windows XP (1.4.1, 1.5.0)
@@ -119,7 +157,9 @@ All testing is done manually:
 * Chrome 13 on windows XP (1.4.1, 1.5.0)
 * Firefox 5.1 on Mac (1.4.1, 1.5.0)
 * Firefox 6.0 on Mac (1.5.0)
+* Firefox 15.1 on Mac (1.8.0)
 * Chrome 13 on Mac (1.4.1, 1.5.0)
+* Chrome 21 on Mac (1.8.0)
 * Safari 5 on Mac (1.4.1, 1.5.0)
 * Opera 11.5 on Mac (1.4.1)
 * Firefox 4 on Ubuntu 11.04 (1.4.1)
@@ -198,6 +238,7 @@ See specific license for any other code included, i.e. jquery
 
 ## TODO List:
 
+* publish demo site to heroku
 * automated tests
 
 ## Patches:

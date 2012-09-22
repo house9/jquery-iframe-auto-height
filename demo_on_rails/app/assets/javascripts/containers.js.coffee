@@ -23,6 +23,11 @@ class Container
         debug: true
         minHeight: 420
         resetToMinHeight: true
+        heightCalculationOverrides: [
+          { browser: 'mozilla', calculation: () -> return 420 },
+          { browser: 'webkit', calculation: () -> return 520 },
+          { browser: 'msie', calculation: () -> return 620 }
+        ]
         callback: (callbackObject) -> console.debug "CallBack: height='#{callbackObject.newFrameHeight}' / iframe-id='#{jQuery(this).attr('id')}'"
 
       $('#small-iframe').iframeAutoHeight

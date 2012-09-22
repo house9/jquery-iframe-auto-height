@@ -24,7 +24,8 @@
         debug: false,
         diagnostics: false, // used for development only
         resetToMinHeight: false,
-        triggerFunctions: []
+        triggerFunctions: [],
+        heightCalculationOverrides: []
       }, spec);
 
     // logging
@@ -56,6 +57,43 @@
     // iterate over the matched elements passed to the plugin ; return will make it chainable
     return this.each(function () {
 
+      // ******************************************************
+      // http://api.jquery.com/jQuery.browser/
+      var strategyKeys = ['webkit', 'mozilla', 'msie', 'opera'];
+      var strategies = [];
+      strategies['default'] = function (iframe, $iframeBody, options, browser) {
+        // NOTE: this is how the plugin determines the iframe height, override if you need custom
+        return $iframeBody[0].scrollHeight + options.heightOffset;
+      };
+
+      jQuery.each(strategyKeys, function (index, value) {
+        // use the default strategy for all browsers, can be overridden if desired
+        strategies[value] = strategies['default'];
+      });
+
+      // override strategies if registered in options
+      jQuery.each(options.heightCalculationOverrides, function(index, value) {
+        strategies[value.browser] = value.calculation;
+      });
+
+      function findStrategy(browser) {
+        var strategy = null;
+
+        jQuery.each(strategyKeys, function (index, value) {
+          if (browser[value]) {
+            strategy = strategies[value];
+            return false;
+          }
+        });
+
+        if (strategy === null) {
+          strategy = strategies['default'];
+        }
+
+        return strategy;
+      }
+      // ******************************************************
+
       // for use by webkit only
       var loadCounter = 0;
 
@@ -66,19 +104,14 @@
         }
 
         // set the iframe size to minHeight so it'll get smaller on resizes in FF and IE
-        if(options.resetToMinHeight && options.resetToMinHeight === true) {
+        if (options.resetToMinHeight && options.resetToMinHeight === true) {
           iframe.style.height = options.minHeight + 'px';
         }
 
         // get the iframe body height and set inline style to that plus a little
         var $body = $(iframe, window.top.document).contents().find('body');
-        var newHeight = $body[0].scrollHeight + options.heightOffset;
-        // var newHeight = options.heightOffset;
-        // if($.browser.mozilla) {
-        //  newHeight += iframe.contentDocument.documentElement.scrollHeight;
-        // } else {
-        //  newHeight += $body[0].scrollHeight + options.heightOffset;
-        // }
+        var strategy = findStrategy($.browser);
+        var newHeight = strategy(iframe, $body, options, $.browser);
         debug(newHeight);
 
         if (newHeight < options.minHeight) {
