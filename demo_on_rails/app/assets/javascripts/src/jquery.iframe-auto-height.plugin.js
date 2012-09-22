@@ -24,7 +24,7 @@
         debug: false,
         diagnostics: false, // used for development only
         resetToMinHeight: false,
-        fireOnResize: false
+        triggerFunctions: []
       }, spec);
 
     // logging
@@ -64,20 +64,21 @@
         if (options.diagnostics) {
           showDiagnostics(iframe, "resizeHeight");
         }
-        
+
         // set the iframe size to minHeight so it'll get smaller on resizes in FF and IE
         if(options.resetToMinHeight && options.resetToMinHeight === true) {
-          iframe.style.height = options.minHeight + 'px';        	
+          iframe.style.height = options.minHeight + 'px';
         }
 
         // get the iframe body height and set inline style to that plus a little
         var $body = $(iframe, window.top.document).contents().find('body');
-        var newHeight = options.heightOffset;
-        if($.browser.mozilla) {
-        	newHeight += iframe.contentDocument.documentElement.scrollHeight;
-        } else {
-        	newHeight += $body[0].scrollHeight + options.heightOffset;
-        }
+        var newHeight = $body[0].scrollHeight + options.heightOffset;
+        // var newHeight = options.heightOffset;
+        // if($.browser.mozilla) {
+        //  newHeight += iframe.contentDocument.documentElement.scrollHeight;
+        // } else {
+        //  newHeight += $body[0].scrollHeight + options.heightOffset;
+        // }
         debug(newHeight);
 
         if (newHeight < options.minHeight) {
@@ -93,20 +94,20 @@
         }
 
         options.callback.apply($(iframe), [{newFrameHeight: newHeight}]);
-      }
+      } // END resizeHeight
 
       // debug me
       debug(this);
       if (options.diagnostics) {
         showDiagnostics(this, "each iframe");
       }
-      
-      // Resize the iframe when the browser is resized
-      if(options.fireOnResize && options.fireOnResize === true) {
-    	  var i = this;
-    	  $(window).resize(function() {
-              resizeHeight(i);
-          });
+
+      // if trigger functions are registered, invoke them
+      if (options.triggerFunctions.length > 0) {
+        debug(options.triggerFunctions.length + " trigger Functions");
+        for (var i = 0; i < options.triggerFunctions.length; i++) {
+          options.triggerFunctions[i](resizeHeight, this);
+        }
       }
 
       // Check if browser is Opera or Safari (Webkit really, so includes Chrome)

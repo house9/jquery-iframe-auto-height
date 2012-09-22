@@ -21,21 +21,39 @@ class Container
     jQuery ->
       $('#xsmall-iframe').iframeAutoHeight
         debug: true
+        minHeight: 420
+        resetToMinHeight: true
         callback: (callbackObject) -> console.debug "CallBack: height='#{callbackObject.newFrameHeight}' / iframe-id='#{jQuery(this).attr('id')}'"
 
       $('#small-iframe').iframeAutoHeight
         debug: true
+        minHeight: 120
         callback: (callbackObject) -> console.debug "CallBack: height='#{callbackObject.newFrameHeight}' / iframe-id='#{jQuery(this).attr('id')}'"
+        triggerFunctions: [
+          (resizeFunction, iframe) ->
+            $('#resize-clicker').click ->
+              $(iframe).contents().find('body').html('') # clear content
+              console.debug("clear content on small-iframe")
+              resizeFunction(iframe)
+        ]
 
       $('#medium-iframe').iframeAutoHeight
         debug: true
         callback: (callbackObject) -> console.debug "CallBack: height='#{callbackObject.newFrameHeight}' / iframe-id='#{jQuery(this).attr('id')}'"
+        fireOnResize: true
+        triggerFunctions: [
+          (resizeFunction, iframe) ->
+            $(window).resize ->
+              console.debug("window resized - firing resizeHeight on iframe")
+              resizeFunction(iframe)
+        ]
 
   standardIframe: () ->
     jQuery ->
       $('iframe').iframeAutoHeight
         debug: true
         minHeight: 180
+        diagnostics: true
 
 # ==============================
 # bind to the window

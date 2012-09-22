@@ -57,6 +57,41 @@ code can be called from within $(document).ready or after iframes are declared i
   * Default is false
   * Uses [jquery animate](http://api.jquery.com/animate/) with duration of 500 when resizing the iframe
   * Example: `$('iframe').iframeAutoHeight({animate: true});` 
+* triggerFunctions: Array of functions
+  * Default is an empty array
+  * Optionally define 1 or more functions that will have access to the resize method
+  * can be used to resize the iframe from external events such as click or window resize - see example below
+
+## Examples:
+
+### triggerFunctions 
+```
+// fire iframe resize when window is resized
+var windowResizeFunction = function (resizeFunction, iframe) {
+  $(window).resize(function () {
+    console.debug("window resized - firing resizeHeight on iframe");
+    resizeFunction(iframe);
+  });
+};
+
+// fire iframe resize when a link is clicked
+var clickFunction = function (resizeFunction, iframe) {
+  $('a').click(function () {
+    $(iframe).contents().find('body').html(''); // clear content of iframe
+    console.debug("link clicked - firing resizeHeight on iframe");
+    resizeFunction(iframe);
+  });
+};
+
+$('iframe').iframeAutoHeight({
+  debug: true,
+  triggerFunctions: [
+    windowResizeFunction, 
+    clickFunction
+  ]
+});
+
+```
 
 
 ## Summary:
@@ -107,6 +142,10 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.8.0 / 2012-09-22
+
+* TODO
+
 1.7.1 / 2012-06-02
 
 * webkit browsers, don't set iframe.style.height to 0px on initial page load
@@ -155,6 +194,7 @@ See specific license for any other code included, i.e. jquery
 * Mmjavellana (https://github.com/Mmjavellana)
 * yiqing-95 (https://github.com/yiqing-95)
 * jcaspian (https://github.com/jcaspian)
+* adamjgray (https://github.com/adamjgray)
 
 ## TODO List:
 
@@ -183,6 +223,8 @@ First update the version.rb file, then run the ruby command. The script will put
 one minified and one full. A small amount of search and replace takes place on the comment block for output files.
 
 `ruby releaser.rb`
+
+TODO: publish to jam
 
 ## Known Issues 
 
