@@ -76,6 +76,15 @@
         // get the iframe body height and set inline style to that plus a little
         var $body = $(iframe, window.top.document).contents().find('body');
         var newHeight = $body[0].scrollHeight + options.heightOffset;
+
+        // fix bugs for firefox 11
+        if ($.browser.mozilla) {
+          var originalOverflow = $body[0].style.overflow;
+          $body[0].style.overflow = "scroll";
+          newHeight = $body[0].scrollHeight + options.heightOffset;
+          $body[0].style.overflow = originalOverflow;
+        }
+
         debug(newHeight);
 
         if (newHeight < options.minHeight) {
