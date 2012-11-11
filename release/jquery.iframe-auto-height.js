@@ -154,8 +154,8 @@
         }
       }
 
-      // Check if browser is Opera or Safari (Webkit really, so includes Chrome)
-      if ($.browser.safari || $.browser.opera) {
+      // Check if browser is Webkit (Safari/Chrome) or Opera
+      if ($.browser.webkit || $.browser.opera) {
         debug("browser is webkit or opera");
 
         // Start timer when loaded.
