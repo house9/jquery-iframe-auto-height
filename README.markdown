@@ -182,6 +182,10 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.9.0 / 2012-11-11
+
+* use the `$.browser.webkit` in-place of `$.browser.safari`, requires jquery 1.4 and up
+
 1.8.0 / 2012-09-22
 
 * new option - resetToMinHeight
@@ -237,6 +241,7 @@ See specific license for any other code included, i.e. jquery
 * yiqing-95 (https://github.com/yiqing-95)
 * jcaspian (https://github.com/jcaspian)
 * adamjgray (https://github.com/adamjgray)
+* Jens Bissinger (https://github.com/dpree)
 
 ## TODO List:
 
