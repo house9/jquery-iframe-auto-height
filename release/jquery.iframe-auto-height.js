@@ -73,9 +73,9 @@
       // http://api.jquery.com/jQuery.browser/
       var strategyKeys = ['webkit', 'mozilla', 'msie', 'opera'];
       var strategies = [];
-      strategies['default'] = function (iframe, $iframeBody, options, browser) {
+      strategies['default'] = function (iframe, $iframeBody, options, browser, sandboxed) {
         // NOTE: this is how the plugin determines the iframe height, override if you need custom
-        return $iframeBody[0].scrollHeight + options.heightOffset;
+        return (sandboxed ? 0 : $iframeBody[0].scrollHeight) + options.heightOffset;
       };
 
       jQuery.each(strategyKeys, function (index, value) {
@@ -120,10 +120,19 @@
           iframe.style.height = options.minHeight + 'px';
         }
 
+        // get the iframe body
+        var sandboxed = false;
+        var $body;
+        try {
+          $body = $(iframe, window.top.document).contents().find('body');
+        } catch (ex) {
+          debug("Abort resizeHeight: sandboxed content detected");
+          sandboxed = true;
+        }
+
         // get the iframe body height and set inline style to that plus a little
-        var $body = $(iframe, window.top.document).contents().find('body');
         var strategy = findStrategy($.browser);
-        var newHeight = strategy(iframe, $body, options, $.browser);
+        var newHeight = strategy(iframe, $body, options, $.browser, sandboxed);
         debug(newHeight);
 
         if (newHeight < options.minHeight) {
