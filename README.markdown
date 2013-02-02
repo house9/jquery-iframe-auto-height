@@ -16,7 +16,7 @@ code can be called from within $(document).ready or after iframes are declared i
 <!-- with document ready, most likely in the html head -->
 <script>
   $(document).ready(function () {
-    $('iframe').iframeAutoHeight({debug: true});  
+    $('iframe').iframeAutoHeight({debug: true});
   });
 </script>
 
@@ -29,12 +29,14 @@ code can be called from within $(document).ready or after iframes are declared i
 
 ### Note
 
+* jQuery 1.9.0 and up: you must add the $.browser plugin feature - [https://raw.github.com/jquery/jquery-browser/master/src/jquery.browser.js](https://raw.github.com/jquery/jquery-browser/master/src/jquery.browser.js)
+  * download and include after the jquery plugin and before the iframe plugin
 * 1.7.1 and below: you can also install using jamjs - [http://jamjs.org/packages/#/details/jquery-iframe-auto-height](http://jamjs.org/packages/#/details/jquery-iframe-auto-height)
 
 ### Options
 
 * callback: function
-  * Default empty function 
+  * Default empty function
   * Optionally define a callback function (in this case inline) that will do something with the callbackObject.newFrameHeight value. This can for instance be used with easyXDM to alert another domain that the frame has changed height.
   * Example: `$('iframe').iframeAutoHeight({callback: function(callbackObject) { alert(callbackObject.newFrameHeight);} });`
   * you can also access the current iframe jquery wrapper object use the `this` keyword
@@ -42,21 +44,21 @@ code can be called from within $(document).ready or after iframes are declared i
 * debug: boolean
   * Default is false
   * Will log some internal information to the console, if available
-  * Example: `$('iframe').iframeAutoHeight({debug: true})` 
+  * Example: `$('iframe').iframeAutoHeight({debug: true})`
 * heightOffset: integer
-  * Default is 0 
+  * Default is 0
   * Unit is pixels
   * Optionally add some buffer to the bottom
-  * Example: `$('iframe').iframeAutoHeight({heightOffset: 20});` 
+  * Example: `$('iframe').iframeAutoHeight({heightOffset: 20});`
 * minHeight: integer
-  * Default is 0 
+  * Default is 0
   * Unit is pixels
   * Sets the iframe height to this value if the calculated value is less
-  * Example: `$('iframe').iframeAutoHeight({minHeight: 200});` 
+  * Example: `$('iframe').iframeAutoHeight({minHeight: 200});`
 * animate: boolean
   * Default is false
   * Uses [jquery animate](http://api.jquery.com/animate/) with duration of 500 when resizing the iframe
-  * Example: `$('iframe').iframeAutoHeight({animate: true});` 
+  * Example: `$('iframe').iframeAutoHeight({animate: true});`
 * resetToMinHeight: boolean
   * Default is false
   * hard set the iframe height to the minHeight before re-sizing
@@ -75,7 +77,7 @@ code can be called from within $(document).ready or after iframes are declared i
 
 ## Examples:
 
-### triggerFunctions 
+### triggerFunctions
 ```
 // fire iframe resize when window is resized
 var windowResizeFunction = function (resizeFunction, iframe) {
@@ -97,7 +99,7 @@ var clickFunction = function (resizeFunction, iframe) {
 $('iframe').iframeAutoHeight({
   debug: true,
   triggerFunctions: [
-    windowResizeFunction, 
+    windowResizeFunction,
     clickFunction
   ]
 });
@@ -109,10 +111,10 @@ $('iframe').iframeAutoHeight({
 // override all browser calculations using default
 $('iframe').iframeAutoHeight({
   debug: true,
-  heightCalculationOverrides: [{ 
-    browser: 'default', 
+  heightCalculationOverrides: [{
+    browser: 'default',
     calculation: function (iframe, $iframeBody, options, browser) {
-      return 1000; 
+      return 1000;
     }
   }]
 });
@@ -121,8 +123,8 @@ $('iframe').iframeAutoHeight({
 // this is the usual work around, but it breaks demo pages so not used in plugin
 $('iframe').iframeAutoHeight({
   debug: true,
-  heightCalculationOverrides: [{ 
-    browser: 'mozilla', 
+  heightCalculationOverrides: [{
+    browser: 'mozilla',
     calculation: function (iframe, $iframeBody, options, browser) {
       // since the jquery browser is passed in you can also check specific versions if desired
       return iframe.contentDocument.documentElement.scrollHeight + options.heightOffset;
@@ -139,8 +141,8 @@ The plugin will resize an iframe to the height of its contents
 
 Will NOT work if the iframe contains a page from another domain
 
-When viewing code locally, i.e. file:///, Google chrome will throw security errors; 
-Works fine in Firefox locally and should work ok in all browsers when served from the same domain. 
+When viewing code locally, i.e. file:///, Google chrome will throw security errors;
+Works fine in Firefox locally and should work ok in all browsers when served from the same domain.
 
 Current Version: 1.5.0
 
@@ -176,12 +178,16 @@ You may want to consider one of these alternative solutions for your iframe resi
 
 The plugin: release/jquery.iframe-auto-height.plugin.js
 
-* [The Unlicense](http://unlicense.org) (aka: public domain) 
+* [The Unlicense](http://unlicense.org) (aka: public domain)
 
-See specific license for any other code included, i.e. jquery 
+See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.9.1 / 2013-02-02
+
+* Add js alert warning if using jquery 1.9 and up, `$.browser` is needed
+
 1.9.0 / 2012-11-11
 
 * use the `$.browser.webkit` in-place of `$.browser.safari`, requires jquery 1.4 and up
@@ -206,7 +212,7 @@ See specific license for any other code included, i.e. jquery
 
 1.5.0 / 2011-08-18
 
-* add minHeight option, refactoring height calculation 
+* add minHeight option, refactoring height calculation
 
 1.4.0 / 2011-07-25
 
@@ -216,11 +222,11 @@ See specific license for any other code included, i.e. jquery
 
 * fix issue on Webkit (Google Chrome & Safari) when tall iframe links to short iframe
 
-1.2.0 / 2011-07-08 
+1.2.0 / 2011-07-08
 
 * If the iframe document is read in quirks mode, fixed a problem with IE not applying the correct height.
 
-1.1.0 / 2011-05-29 
+1.1.0 / 2011-05-29
 
 * added the ability to pass in a callback function
 
@@ -260,24 +266,24 @@ jslint checking
 
 `jslint demo_on_rails/app/assets/javascripts/src/jquery.iframe-auto-height.plugin.js`
 
-before the rails app was part of this project I used webrick for testing the static html files in webkit browsers, 
+before the rails app was part of this project I used webrick for testing the static html files in webkit browsers,
 but using localhost and file:/// are problematic, webrick can use your local machine ip address and any port you want
 
 `ruby webrick.rb --port 3333 --bind 192.168.0.5 --docroot .`
 
-Building the release 
+Building the release
 
-First update the version.rb file, then run the ruby command. The script will put two files in the release directory, 
+First update the version.rb file, then run the ruby command. The script will put two files in the release directory,
 one minified and one full. A small amount of search and replace takes place on the comment block for output files.
 
 `ruby releaser.rb`
 
 
-## Known Issues 
+## Known Issues
 
 * with IE8 it seems better to not specify the height attribute on the iframe
 
-## Issues 
+## Issues
 
 If you come across issues feel free to post them using the 'Issues' tab above (github)
 

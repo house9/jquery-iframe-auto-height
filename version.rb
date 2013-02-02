@@ -1,6 +1,6 @@
 class Version
 
-  JQUERY_IFRAME_AUTO_HEIGHT_VERSION = "1.9.0"
+  JQUERY_IFRAME_AUTO_HEIGHT_VERSION = "1.9.1"
 
   AUTHORS = [
     "NATHAN SMITH (http://sonspring.com/)",

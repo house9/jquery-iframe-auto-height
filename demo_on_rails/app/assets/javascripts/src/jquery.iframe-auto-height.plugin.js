@@ -15,6 +15,16 @@
 (function ($) {
   $.fn.iframeAutoHeight = function (spec) {
 
+    var undef;
+    if ($.browser == undef) {
+      message = [];
+      message.push("WARNING: you appear to be using a newer version of jquery which does not support the $.browser variable.");
+      message.push("The jQuery iframe auto height plugin relies heavly on the $.browser features.");
+      message.push("Install jquery-browser: https://raw.github.com/jquery/jquery-browser/master/src/jquery.browser.js");
+      alert(message.join("\n"));
+      return $;
+    }
+
     // set default option values
     var options = $.extend({
         heightOffset: 0,
