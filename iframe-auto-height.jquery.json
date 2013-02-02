@@ -1,11 +1,7 @@
 {
     "name": "iframe-auto-height",
     "title": "jQuery iframe auto height plugin",
-    "description": "
-        The plugin will resize an iframe to the height of its contents.
-        It will NOT work if the iframe contains a page from another domain.
-        If using jquery 1.9 or up jquery.browser.js is also required.
-    ",
+    "description": "The plugin will resize an iframe to the height of its contents. It will NOT work if the iframe contains a page from another domain. If using jquery 1.9 or up jquery.browser.js is also required.",
     "keywords": [
         "iframe"
     ],
