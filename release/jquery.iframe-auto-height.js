@@ -28,8 +28,8 @@
   $.fn.iframeAutoHeight = function (spec) {
 
     var undef;
-    if ($.browser == undef) {
-      message = [];
+    if ($.browser === undef) {
+      var message = [];
       message.push("WARNING: you appear to be using a newer version of jquery which does not support the $.browser variable.");
       message.push("The jQuery iframe auto height plugin relies heavly on the $.browser features.");
       message.push("Install jquery-browser: https://raw.github.com/jquery/jquery-browser/master/src/jquery.browser.js");
@@ -94,7 +94,7 @@
       });
 
       // override strategies if registered in options
-      jQuery.each(options.heightCalculationOverrides, function(index, value) {
+      jQuery.each(options.heightCalculationOverrides, function (index, value) {
         strategies[value.browser] = value.calculation;
       });
 
