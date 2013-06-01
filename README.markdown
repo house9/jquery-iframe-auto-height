@@ -29,7 +29,7 @@ code can be called from within $(document).ready or after iframes are declared i
 
 ### Note
 
-* jQuery 1.9.0 and up: you must add the $.browser plugin feature - [https://raw.github.com/jquery/jquery-browser/master/src/jquery.browser.js](https://raw.github.com/jquery/jquery-browser/master/src/jquery.browser.js)
+* jQuery 1.9.0 and up: you must add the $.browser plugin feature - [https://raw.github.com/house9/jquery-iframe-auto-height/release/jquery.browser.js](https://raw.github.com/house9/jquery-iframe-auto-height/release/jquery.browser.js)
   * download and include after the jquery plugin and before the iframe plugin
 * 1.7.1 and below: you can also install using jamjs - [http://jamjs.org/packages/#/details/jquery-iframe-auto-height](http://jamjs.org/packages/#/details/jquery-iframe-auto-height)
 
@@ -144,8 +144,6 @@ Will NOT work if the iframe contains a page from another domain
 When viewing code locally, i.e. file:///, Google chrome will throw security errors;
 Works fine in Firefox locally and should work ok in all browsers when served from the same domain.
 
-Current Version: 1.5.0
-
 All testing is done manually:
 
 1.6.0 and 1.7.0 have not been officially tested, but the changes were minor
@@ -184,6 +182,11 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.9.2 / 2013-06-01
+
+* update url for jquery browser plugin, original repo was removed from github
+* jslint fixes
+
 1.9.1 / 2013-02-02
 
 * Add js alert warning if using jquery 1.9 and up, `$.browser` is needed
