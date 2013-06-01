@@ -20,7 +20,7 @@
       var message = [];
       message.push("WARNING: you appear to be using a newer version of jquery which does not support the $.browser variable.");
       message.push("The jQuery iframe auto height plugin relies heavly on the $.browser features.");
-      message.push("Install jquery-browser: https://raw.github.com/house9/jquery-iframe-auto-height/release/jquery.browser.js");
+      message.push("Install jquery-browser: https://raw.github.com/house9/jquery-iframe-auto-height/master/release/jquery.browser.js");
       alert(message.join("\n"));
       return $;
     }

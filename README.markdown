@@ -29,7 +29,7 @@ code can be called from within $(document).ready or after iframes are declared i
 
 ### Note
 
-* jQuery 1.9.0 and up: you must add the $.browser plugin feature - [https://raw.github.com/house9/jquery-iframe-auto-height/release/jquery.browser.js](https://raw.github.com/house9/jquery-iframe-auto-height/release/jquery.browser.js)
+* jQuery 1.9.0 and up: you must add the $.browser plugin feature - [https://raw.github.com/house9/jquery-iframe-auto-height/master/release/jquery.browser.js](https://raw.github.com/house9/jquery-iframe-auto-height/master/release/jquery.browser.js)
   * download and include after the jquery plugin and before the iframe plugin
 * 1.7.1 and below: you can also install using jamjs - [http://jamjs.org/packages/#/details/jquery-iframe-auto-height](http://jamjs.org/packages/#/details/jquery-iframe-auto-height)
 
@@ -182,6 +182,10 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.9.3 / 2013-06-01
+
+* the url was bad - doh!
+
 1.9.2 / 2013-06-01
 
 * update url for jquery browser plugin, original repo was removed from github
