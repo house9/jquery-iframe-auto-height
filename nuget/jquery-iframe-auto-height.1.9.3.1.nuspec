@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>jquery-iframe-auto-height</id>
-        <version>1.9.3</version>
+        <version>1.9.3.1</version>
         <title>jquery-iframe-auto-height</title>
         <authors>Jesse House,Robert Sirre</authors>
         <owners>Jesse House</owners>
