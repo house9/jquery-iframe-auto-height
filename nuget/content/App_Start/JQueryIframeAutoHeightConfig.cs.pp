@@ -1,9 +1,9 @@
 using System.Web.Optimization;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof($rootnamespace$.AdminMailMergeConfig), "RegisterBundles")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof($rootnamespace$.JQueryIframeAutoHeightConfig), "RegisterBundles")]
 namespace $rootnamespace$
 {
-  public class AdminMailMergeConfig
+  public class JQueryIframeAutoHeightConfig
   {
     public static void RegisterBundles()
     {
