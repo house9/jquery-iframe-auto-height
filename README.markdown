@@ -1,5 +1,22 @@
 #  jQuery iframe auto height plugin
 
+## Alternatives:
+
+You may want to consider one of these alternative solutions for your iframe resizing needs?
+  
+* Iframe-resizer
+  * [http://davidjbradshaw.github.io/iframe-resizer/](http://davidjbradshaw.github.io/iframe-resizer/) 
+  * jQuery pluggin for cross domain sizing iframes to content with support for window resizing
+* easyXDM
+  * [http://easyxdm.net/wp/2010/03/17/resize-iframe-based-on-content/](http://easyxdm.net/wp/2010/03/17/resize-iframe-based-on-content/)
+  * Resize iframe based on content
+* jQuery resize plugin
+  * [http://benalman.com/projects/jquery-resize-plugin/](http://benalman.com/projects/jquery-resize-plugin/)
+
+## ATTENTION
+
+This plugin will NOT work if the iframe contains a page from another domain, use one of the alternate libraries above if you need cross domain resize.
+
 ## Usage:
 
 * include jquery in your page
@@ -164,13 +181,6 @@ All testing is done manually:
 * Opera 11.5 on Mac (1.4.1)
 * Firefox 4 on Ubuntu 11.04 (1.4.1)
 * Chrome 11 on Ubuntu 11.04 (1.4.1)
-
-## Alternatives:
-
-You may want to consider one of these alternative solutions for your iframe resizing needs?
-
-* easyXDM, Resize iframe based on content (http://easyxdm.net/wp/2010/03/17/resize-iframe-based-on-content/)
-* jQuery resize plugin (http://benalman.com/projects/jquery-resize-plugin/)
 
 ## License:
 
