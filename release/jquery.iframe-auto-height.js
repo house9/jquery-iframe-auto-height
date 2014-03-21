@@ -82,7 +82,7 @@
       // ******************************************************
       // http://api.jquery.com/jQuery.browser/
       var strategyKeys = ['webkit', 'mozilla', 'msie', 'opera'];
-      var strategies = [];
+      var strategies = {};
       strategies['default'] = function (iframe, $iframeBody, options, browser) {
         // NOTE: this is how the plugin determines the iframe height, override if you need custom
         return $iframeBody[0].scrollHeight + options.heightOffset;
