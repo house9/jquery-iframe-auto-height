@@ -132,6 +132,7 @@
 
         // get the iframe body height and set inline style to that plus a little
         var $body = $(iframe, window.top.document).contents().find('body');
+        var iframeDoc = this.contentDocument || this.contentWindow.document;
         var strategy = findStrategy($.browser);
         var newHeight = strategy(iframe, $body, options, $.browser);
         debug(newHeight);
@@ -198,9 +199,13 @@
         $(this).attr('src', source);
       } else {
         // For other browsers.
-        $(this).load(function () {
+        if(iframeDoc.readyState  == 'complete'){
           resizeHeight(this);
-        });
+        }else{
+          $(this).load(function () {
+            resizeHeight(this);
+          });
+        }
       } // if browser
 
     }); // $(this).each(function () {
