@@ -29,6 +29,7 @@
     var options = $.extend({
         heightOffset: 0,
         minHeight: 0,
+        maxHeight: 0,
         callback: function (newHeight) {},
         animate: false,
         debug: false,
@@ -126,8 +127,15 @@
 
         if (newHeight < options.minHeight) {
           debug("new height is less than minHeight");
-          newHeight = options.minHeight + options.heightOffset;
+          newHeight = options.minHeight;
         }
+
+        if (options.maxHeight > 0 && newHeight > options.maxHeight) {
+          debug("new height is greater than maxHeight");
+          newHeight = options.maxHeight;
+        }
+
+        newHeight += options.heightOffset;
 
         debug("New Height: " + newHeight);
         if (options.animate) {
