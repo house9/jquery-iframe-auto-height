@@ -83,7 +83,7 @@
       // ******************************************************
       // http://api.jquery.com/jQuery.browser/
       var strategyKeys = ['webkit', 'mozilla', 'msie', 'opera'];
-      var strategies = [];
+      var strategies = {};
       strategies['default'] = function (iframe, $iframeBody, options, browser) {
         // NOTE: this is how the plugin determines the iframe height, override if you need custom
         return $iframeBody[0].scrollHeight + options.heightOffset;
@@ -133,6 +133,7 @@
 
         // get the iframe body height and set inline style to that plus a little
         var $body = $(iframe, window.top.document).contents().find('body');
+        var iframeDoc = this.contentDocument || this.contentWindow.document;
         var strategy = findStrategy($.browser);
         var newHeight = strategy(iframe, $body, options, $.browser);
         debug(newHeight);
@@ -206,9 +207,13 @@
         $(this).attr('src', source);
       } else {
         // For other browsers.
-        $(this).load(function () {
+        if(iframeDoc.readyState  == 'complete'){
           resizeHeight(this);
-        });
+        }else{
+          $(this).load(function () {
+            resizeHeight(this);
+          });
+        }
       } // if browser
 
     }); // $(this).each(function () {
