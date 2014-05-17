@@ -71,7 +71,7 @@
       // ******************************************************
       // http://api.jquery.com/jQuery.browser/
       var strategyKeys = ['webkit', 'mozilla', 'msie', 'opera'];
-      var strategies = [];
+      var strategies = {};
       strategies['default'] = function (iframe, $iframeBody, options, browser) {
         // NOTE: this is how the plugin determines the iframe height, override if you need custom
         return $iframeBody[0].scrollHeight + options.heightOffset;
@@ -107,6 +107,8 @@
 
       // for use by webkit only
       var loadCounter = 0;
+
+      var iframeDoc = this.contentDocument || this.contentWindow.document;
 
       // resizeHeight
       function resizeHeight(iframe) {
@@ -162,7 +164,7 @@
       }
 
       // Check if browser is Webkit (Safari/Chrome) or Opera
-      if ($.browser.webkit || $.browser.opera) {
+      if ($.browser.webkit || $.browser.opera || $.browser.chrome) {
         debug("browser is webkit or opera");
 
         // Start timer when loaded.
@@ -194,9 +196,13 @@
         $(this).attr('src', source);
       } else {
         // For other browsers.
-        $(this).load(function () {
+        if(iframeDoc.readyState  === 'complete') {
           resizeHeight(this);
-        });
+        } else {
+          $(this).load(function () {
+            resizeHeight(this);
+          });
+        }
       } // if browser
 
     }); // $(this).each(function () {
