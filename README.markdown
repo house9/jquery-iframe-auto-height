@@ -3,9 +3,9 @@
 ## Alternatives:
 
 You may want to consider one of these alternative solutions for your iframe resizing needs?
-  
+
 * Iframe-resizer
-  * [http://davidjbradshaw.github.io/iframe-resizer/](http://davidjbradshaw.github.io/iframe-resizer/) 
+  * [http://davidjbradshaw.github.io/iframe-resizer/](http://davidjbradshaw.github.io/iframe-resizer/)
   * jQuery pluggin for cross domain sizing iframes to content with support for window resizing
 * easyXDM
   * [http://easyxdm.net/wp/2010/03/17/resize-iframe-based-on-content/](http://easyxdm.net/wp/2010/03/17/resize-iframe-based-on-content/)
@@ -192,6 +192,15 @@ See specific license for any other code included, i.e. jquery
 
 
 ## Changelog:
+1.9.5 / 2014-05-17
+
+* Update the way that the initial resize happens
+ * load event may never trigger if content is already loaded
+
+1.9.4 / 2014-05-14
+
+* maxHeight option
+
 1.9.3 / 2013-06-01
 
 * the url was bad - doh!
@@ -265,9 +274,12 @@ See specific license for any other code included, i.e. jquery
 * jcaspian (https://github.com/jcaspian)
 * adamjgray (https://github.com/adamjgray)
 * Jens Bissinger (https://github.com/dpree)
+* jbreton (https://github.com/jbreton)
+* mindmelting (https://github.com/mindmelting)
 
 ## TODO List:
 
+* create a bower package
 * publish demo site to heroku
 * automated tests
 

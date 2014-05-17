@@ -1,6 +1,6 @@
 class Version
 
-  JQUERY_IFRAME_AUTO_HEIGHT_VERSION = "1.9.4"
+  JQUERY_IFRAME_AUTO_HEIGHT_VERSION = "1.9.5"
 
   AUTHORS = [
     "NATHAN SMITH (http://sonspring.com/)",
@@ -13,7 +13,9 @@ class Version
     "yiqing-95 (https://github.com/yiqing-95)",
     "jcaspian (https://github.com/jcaspian)",
     "adamjgray (https://github.com/adamjgray)",
-    "Jens Bissinger (https://github.com/dpree)"
+    "Jens Bissinger (https://github.com/dpree)",
+    "jbreton (https://github.com/jbreton)",
+    "mindmelting (https://github.com/mindmelting)"
   ]
 
   AUTHOR_TOKEN = "[INSERT_AUTHOR_LIST]"
