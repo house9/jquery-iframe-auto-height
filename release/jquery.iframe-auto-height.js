@@ -3,7 +3,7 @@
 
 /*
   Plugin: iframe autoheight jQuery Plugin
-  Version: 1.9.5
+  Version: 1.9.5 -patched
   Author and Contributors
   ========================================
   NATHAN SMITH (http://sonspring.com/)
@@ -19,6 +19,7 @@
   Jens Bissinger (https://github.com/dpree)
   jbreton (https://github.com/jbreton)
   mindmelting (https://github.com/mindmelting)
+  CapitalId (https://github.com/CapitalID)
 
   File: jquery.iframe-auto-height.plugin.js
   Remarks: original code from http://sonspring.com/journal/jquery-iframe-sizing
@@ -64,7 +65,7 @@
     function showDiagnostics(iframe, calledFrom) {
       debug("Diagnostics from '" + calledFrom + "'");
       try {
-        debug("  " + $(iframe, window.top.document).contents().find('body')[0].scrollHeight + " for ...find('body')[0].scrollHeight");
+        debug("  " + $(iframe, window.parent).contents().find('body')[0].scrollHeight + " for ...find('body')[0].scrollHeight");
         debug("  " + $(iframe.contentWindow.document).height() + " for ...contentWindow.document).height()");
         debug("  " + $(iframe.contentWindow.document.body).height() + " for ...contentWindow.document.body).height()");
       } catch (ex) {
@@ -136,7 +137,7 @@
         }
 
         // get the iframe body height and set inline style to that plus a little
-        var $body = $(iframe, window.top.document).contents().find('body');
+        var $body = $(iframe, window.parent).contents().find('body');
         var strategy = findStrategy($.browser);
         var newHeight = strategy(iframe, $body, options, $.browser);
         debug(newHeight);
