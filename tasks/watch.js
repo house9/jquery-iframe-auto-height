@@ -17,7 +17,6 @@ module.exports = {
     files: '<%= jshint.test.src %>',
     tasks: [
       'jshint:test',
-      'jscs:test',
       'lintspaces:test'
     ]
   }

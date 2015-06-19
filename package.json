@@ -1,6 +1,6 @@
 {
   "name": "jquery-iframe-auto-height",
-  "version": "0.0.0",
+  "version": "2.0.0-beta",
   "description": "jQuery plugin to set the height of an iframe to its contents height",
   "main": "dist/jquery-iframe-auto-height.js",
   "readmeFilename": "README.md",

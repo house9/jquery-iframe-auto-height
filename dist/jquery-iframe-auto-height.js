@@ -1,3 +1,23 @@
+/*! jquery-iframe-auto-height - v2.0.0-beta
+ *  Release on: 2015-06-19
+ *  Copyright (c) 2015 Jesse House
+ *  Licensed MIT */
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module unless amdModuleId is set
+    define([], function () {
+      return (factory());
+    });
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    factory();
+  }
+}(this, function () {
+
 (function ($) {
   $.fn.iframeAutoHeight = function (spec) {
 
@@ -194,3 +214,6 @@
     }); // $(this).each(function () {
   }; // $.fn.iframeAutoHeight = function (options) {
 }(jQuery)); // (function ($) {
+
+
+}));

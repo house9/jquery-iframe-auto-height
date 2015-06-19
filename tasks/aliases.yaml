@@ -4,7 +4,6 @@ default:
 build:
   - clean
   - jshint:lib
-  - jscs:lib
   - lintspaces:lib
   - umd
   - concat
