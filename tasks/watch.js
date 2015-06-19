@@ -7,8 +7,8 @@ module.exports = {
       'lintspaces:gruntfile'
     ]
   },
-  lib: {
-    files: '<%= jshint.lib.src %>',
+  src: {
+    files: '<%= jshint.src.src %>',
     tasks: [
       'build'
     ]

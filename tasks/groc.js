@@ -1,7 +1,7 @@
 module.exports = {
   groc: {
     files: {
-      src: ['lib/**/*.js']
+      src: ['src/**/*.js']
     },
     options: {
       out: 'docs/'

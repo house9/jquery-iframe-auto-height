@@ -6,8 +6,8 @@ module.exports = {
   gruntfile: {
     src: ['Gruntfile.js', 'tasks/{,*/}*.js']
   },
-  lib: {
-    src: ['lib/**/*.js']
+  src: {
+    src: ['src/**/*.js']
   },
   test: {
     src: ['test/**/*.js']
