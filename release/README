@@ -1,4 +1,4 @@
-jquery-iframe-auto-height packaged for jamjs: see http://jamjs.org/
+## NOTE
 
-more info at: https://github.com/house9/jquery-iframe-auto-height/
-
+* use files from the dist directory for 2.0.0 and above
+* this directory exists for legacy reaons only
