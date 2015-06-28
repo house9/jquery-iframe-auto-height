@@ -1,7 +1,7 @@
 /*! jquery-iframe-auto-height - v2.0.0-beta
- *  Release on: 2015-06-19
+ *  Release on: 2015-06-28
  *  Copyright (c) 2015 Jesse House
- *  Licensed MIT */
+ *  Licensed The Unlicense */
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module unless amdModuleId is set
