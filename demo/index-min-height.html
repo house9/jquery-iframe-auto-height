@@ -12,8 +12,8 @@
       jQuery(function() {
         $('iframe').iframeAutoHeight({
           debug: true,
-          minHeight: 180,
-          diagnostics: true
+          minHeight: 480,
+          animate: true
         });
       });
     </script>
@@ -31,34 +31,35 @@
       <div style="clear:both">
         <div style="float: left; width: 280px">
           <div class="p">
-            This content is inside the container page. The pic is in an iframe.
+            This content is inside the container page. The iframe is to the right with a minHeight larger than the content.
           </div>
-          <div class="p">
-            The quick brown fox jumps over the lazy dog. The quick brown fox
-            jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-            The quick brown fox jumps over the lazy dog. The quick brown fox
-            jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-          </div>
-          <div class="p">
-            The quick brown fox jumps over the lazy dog. The quick brown fox
-            jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-            The quick brown fox jumps over the lazy dog. The quick brown fox
-            jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-          </div>
-          <div class="p">
-            The quick brown fox jumps over the lazy dog. The quick brown fox
-            jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-            The quick brown fox jumps over the lazy dog. The quick brown fox
-            jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-          </div>
+            <div class="p">
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+            </div>
+            <div class="p">
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps  over the lazy dog. The quick brown fox jumps over the lazy dog.
+            </div>
+            <div class="p">
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+            </div>
         </div>
         <div style="float: left">
-          <iframe src="./castle.html" style="width: 660px; height: 680px;" scrolling="no" frameborder="0"></iframe>
+          <iframe style="height: 480px;" src="./xsmall.html" class="column" scrolling="no" frameborder="0"></iframe>
         </div>
         <div style="clear:both; line-height: 0px; font-size: 0px">
           &nbsp;
         </div>
       </div>
+
       <div class="clear">
         &nbsp;
       </div>
