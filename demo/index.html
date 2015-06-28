@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>jQuery - iFrame Auto Height Plugin</title>
+    <link href="assets/application.css" media="screen" rel="stylesheet" type="text/css">
+
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="../vendor/jquery.browser.js"></script>
+    <script src="../dist/jquery-iframe-auto-height.js"></script>
+    <script>
+      jQuery(function() {
+        $('iframe').iframeAutoHeight({
+          debug: true,
+          minHeight: 180,
+          diagnostics: true
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>
+        jQuery » iFrame Auto Height Plugin
+      </h1>
+      <p>
+        This <a href="http://jquery.com/">jQuery</a> plugin sets the height on iframes based on their content.
+        <a href="http://github.com/house9/jquery-iframe-auto-height">http://github.com/house9/jquery-iframe-auto-height</a>
+      </p>
+
+      <iframe style="height: 240px;" src="./pic1.html" class="photo" scrolling="no" frameborder="0"></iframe>
+
+      <iframe style="height: 230px;" src="./small.html" class="column" scrolling="no" frameborder="0"></iframe>
+      <iframe style="height: 230px;" src="./small.html" class="column" scrolling="no" frameborder="0"></iframe>
+      <iframe style="height: 230px;" src="./small.html" class="column" scrolling="no" frameborder="0"></iframe>
+      <iframe style="height: 230px;" src="./small.html" class="column" scrolling="no" frameborder="0"></iframe>
+
+      <div class="clear">&nbsp;</div>
+
+      <iframe style="height: 501px;" src="./medium.html" class="column" scrolling="no" frameborder="0"></iframe>
+      <iframe style="height: 501px;" src="./medium.html" class="column" scrolling="no" frameborder="0"></iframe>
+      <iframe style="height: 907px;" src="./medium.html" class="column" scrolling="no" frameborder="0"></iframe>
+      <iframe style="height: 501px;" src="./medium.html" id="test-case" class="column" scrolling="no" frameborder="0"></iframe>
+
+      <div class="clear">
+        &nbsp;
+      </div>
+      <p>
+        More: <a href="./containers/index">Main</a> |
+        <a href="./containers/index2">Another Pic</a> |
+        <a href="./containers/index3">Dynamic</a> |
+        <a href="./containers/index4">Min-Height</a> |
+        <a href="./containers/index5">Callback</a> |
+        <a href="./containers/index6">Form</a>
+      </p>
+      <p>
+        Original code by Nathan Smith, see <a href="http://sonspring.com/journal/jquery-iframe-sizing">original article</a>.
+      </p>
+      <div class="clear">
+        &nbsp;
+      </div>
+    </div>
+
+    <script>
+
+    </script>
+  </body>
+</html>
