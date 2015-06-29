@@ -272,6 +272,8 @@ $('iframe').iframeAutoHeight({
 * Manual testing and documention of supported browser versions
 * Add specs to take screenshots
   * Sauce Labs?
+* Add instructions for defect reporting
+  * code samples, screenshots, etc...
 
 ## Props
 
