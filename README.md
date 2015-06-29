@@ -27,7 +27,7 @@ $ npm install --save-dev jquery-iframe-auto-height
 * There is no longer a NuGet package, please use bower for all javascript packaging needs.
 
 You will find versions before 2.0.0 in the release directory,
-all newer versions are handled using bower and the packaged file is in the [https://raw.github.com/house9/jquery-iframe-auto-height/master/dist/](https://raw.github.com/house9/jquery-iframe-auto-height/master/dist/) directory.
+all newer versions are handled using bower and the packaged file is in the [dist](https://github.com/house9/jquery-iframe-auto-height/blob/master/dist/) directory.
 
 ### Notes
 
