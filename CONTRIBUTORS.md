@@ -13,3 +13,4 @@
 * Jens Bissinger (https://github.com/dpree)
 * jbreton (https://github.com/jbreton)
 * janmas (https://github.com/janmas)
+* Kees C. Bakker (https://github.com/KeesCBakker)
