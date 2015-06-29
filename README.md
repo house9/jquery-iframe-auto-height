@@ -176,6 +176,7 @@ $('iframe').iframeAutoHeight({
   * run `python -m SimpleHTTPServer 8000`
   * open in a brower - `http://localhost:8000/demo/`
 * verify all pages still function properly in as many browers as possible
+* Add your name to the CONTRIBUTORS.md file
 * submit a Pull Request (PR)
   * include a list of OS / brower / version that the changes were tested in as part of the PR
 
@@ -191,6 +192,7 @@ $('iframe').iframeAutoHeight({
   * Use grunt for building and packaging code
   * Remove rails demo, use static html instead
 * Add chrome to strategyKeys array
+* use `window.parent` instead of `window.top.document`
 
 1.9.5 / 2014-05-17
 
