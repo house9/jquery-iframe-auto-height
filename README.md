@@ -277,4 +277,4 @@ $('iframe').iframeAutoHeight({
 
 Original code by NATHAN SMITH; see [http://sonspring.com/journal/jquery-iframe-sizing](http://sonspring.com/journal/jquery-iframe-sizing)
 
-* see also [CONTRIBUTORS.md](https://raw.github.com/house9/CONTRIBUTORS.md)
+* see also [CONTRIBUTORS.md](https://github.com/house9/jquery-iframe-auto-height/blob/master/CONTRIBUTORS.md)
