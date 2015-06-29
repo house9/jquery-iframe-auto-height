@@ -56,7 +56,7 @@
 
       // ******************************************************
       // http://api.jquery.com/jQuery.browser/
-      var strategyKeys = ['webkit', 'mozilla', 'msie', 'opera'];
+      var strategyKeys = ['webkit', 'mozilla', 'msie', 'opera', 'chrome'];
       var strategies = {};
       strategies['default'] = function (iframe, $iframeBody, options) {
         // NOTE: this is how the plugin determines the iframe height, override if you need custom
@@ -151,7 +151,7 @@
 
       // Check if browser is Webkit (Safari/Chrome) or Opera
       if ($.browser.webkit || $.browser.opera || $.browser.chrome) {
-        debug("browser is webkit or opera");
+        debug("browser is webkit (Safari/Chrome) or opera");
 
         // Start timer when loaded.
         $(this).load(function () {

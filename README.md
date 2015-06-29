@@ -187,9 +187,10 @@ $('iframe').iframeAutoHeight({
 
 2.0.0-beta / 2015-06-28
 
-* Use grunt for building and packaging code
 * Changes entire repo directory structure
-* Remove rails demo, use static html instead
+  * Use grunt for building and packaging code
+  * Remove rails demo, use static html instead
+* Add chrome to strategyKeys array
 
 1.9.5 / 2014-05-17
 

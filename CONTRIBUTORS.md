@@ -12,3 +12,4 @@
 * adamjgray (https://github.com/adamjgray)
 * Jens Bissinger (https://github.com/dpree)
 * jbreton (https://github.com/jbreton)
+* janmas (https://github.com/janmas)
