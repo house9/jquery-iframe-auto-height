@@ -179,6 +179,7 @@ $('iframe').iframeAutoHeight({
   * open in a browser - `http://localhost:8000/demo/`
 * verify all pages still function properly in as many browers as possible
 * Add your name to the CONTRIBUTORS.md file
+  * alphabetical order
 * submit a Pull Request (PR)
   * include a list of OS / browser / version that the changes were tested in as part of the PR
 
