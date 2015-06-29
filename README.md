@@ -26,13 +26,15 @@ $ npm install --save-dev jquery-iframe-auto-height
 
 * There is no longer a NuGet package, please use bower for all javascript packaging needs.
 
-You will find versions before 2.0.0 in the release directory, all newer versions are handled using bower and the packaged file is in the dist directory.
+You will find versions before 2.0.0 in the release directory,
+all newer versions are handled using bower and the packaged file is in the [https://raw.github.com/house9/jquery-iframe-auto-height/master/dist/](https://raw.github.com/house9/jquery-iframe-auto-height/master/dist/) directory.
 
 ### Notes
 
 * jQuery 1.9.0 and up: you must add the $.browser plugin feature
   * [https://raw.github.com/house9/jquery-iframe-auto-height/master/vendor/jquery.browser.js](https://raw.github.com/house9/jquery-iframe-auto-height/master/vendor/jquery.browser.js)
   * download and include after the jquery plugin and before the iframe plugin
+  * this file is also included in the bower main section
 
 ## Usage
 
@@ -173,12 +175,12 @@ $('iframe').iframeAutoHeight({
 * modify the file `src/jquery-iframe-auto-height.js` as needed
   * grunt will auto compile it to the dist directory
 * view your changes in the browser
-  * run `python -m SimpleHTTPServer 8000`
-  * open in a brower - `http://localhost:8000/demo/`
+  * run `python -m SimpleHTTPServer 8000` or another web server
+  * open in a browser - `http://localhost:8000/demo/`
 * verify all pages still function properly in as many browers as possible
 * Add your name to the CONTRIBUTORS.md file
 * submit a Pull Request (PR)
-  * include a list of OS / brower / version that the changes were tested in as part of the PR
+  * include a list of OS / browser / version that the changes were tested in as part of the PR
 
 ## License
 
@@ -186,11 +188,12 @@ $('iframe').iframeAutoHeight({
 
 ## Changelog:
 
-2.0.0-beta / 2015-06-28
+2.0.0 / 2015-06-28
 
 * Changes entire repo directory structure
   * Use grunt for building and packaging code
   * Remove rails demo, use static html instead
+  * Include jquery.browser.js in bower main
 * Add chrome to strategyKeys array
 * use `window.parent` instead of `window.top.document`
 
