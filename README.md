@@ -271,9 +271,6 @@ $('iframe').iframeAutoHeight({
 * Manual testing and documention of supported browser versions
 * Add specs to take screenshots
   * Sauce Labs?
-* Deal with 2 existing PRs
-  * Merge into master?
-  * Port over code and test
 
 ## Props
 
