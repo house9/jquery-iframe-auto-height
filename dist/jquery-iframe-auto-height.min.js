@@ -1,4 +1,4 @@
-/*! jquery-iframe-auto-height - v2.0.0-beta
+/*! jquery-iframe-auto-height - v2.0.0
  *  Release on: 2015-06-28
  *  Copyright (c) 2015 Jesse House
  *  Licensed The Unlicense */
