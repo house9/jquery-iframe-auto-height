@@ -5,3 +5,12 @@
 .bundle
 _preview_README.html
 
+node_modules
+./dist
+test/temp
+tmp
+docs
+.DS_Store
+npm-debug.log
+coverage
+report

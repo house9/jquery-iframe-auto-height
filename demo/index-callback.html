@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>jQuery - iFrame Auto Height Plugin</title>
+    <link href="assets/application.css" media="screen" rel="stylesheet" type="text/css">
+
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="../vendor/jquery.browser.js"></script>
+    <script src="../dist/jquery-iframe-auto-height.js"></script>
+    <script>
+      jQuery(function() {
+        $('#xsmall-iframe').iframeAutoHeight({
+          debug: true,
+          minHeight: 420,
+          resetToMinHeight: true,
+          heightCalculationOverrides: [
+            {
+              browser: 'mozilla',
+              calculation: function() {
+                return 420;
+              }
+            }, {
+              browser: 'chrome',
+              calculation: function() {
+                return 120;
+              }
+            }, {
+              browser: 'webkit',
+              calculation: function() {
+                return 520;
+              }
+            }, {
+              browser: 'msie',
+              calculation: function() {
+                return 620;
+              }
+            }
+          ],
+          callback: function(callbackObject) {
+            return console.debug("CallBack: height='" + callbackObject.newFrameHeight + "' / iframe-id='" + (jQuery(this).attr('id')) + "'");
+          }
+        });
+        $('#small-iframe').iframeAutoHeight({
+          debug: true,
+          minHeight: 120,
+          callback: function(callbackObject) {
+            return console.debug("CallBack: height='" + callbackObject.newFrameHeight + "' / iframe-id='" + (jQuery(this).attr('id')) + "'");
+          },
+          triggerFunctions: [
+            function(resizeFunction, iframe) {
+              return $('#resize-clicker').click(function() {
+                $(iframe).contents().find('body').html('');
+                console.debug("clear content on small-iframe");
+                return resizeFunction(iframe);
+              });
+            }
+          ]
+        });
+        return $('#medium-iframe').iframeAutoHeight({
+          debug: true,
+          callback: function(callbackObject) {
+            return console.debug("CallBack: height='" + callbackObject.newFrameHeight + "' / iframe-id='" + (jQuery(this).attr('id')) + "'");
+          },
+          fireOnResize: true,
+          triggerFunctions: [
+            function(resizeFunction, iframe) {
+              return $(window).resize(function() {
+                console.debug("window resized - firing resizeHeight on iframe");
+                return resizeFunction(iframe);
+              });
+            }
+          ]
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>
+        jQuery » iFrame Auto Height Plugin
+      </h1>
+      <p>
+        This <a href="http://jquery.com/">jQuery</a> plugin sets the height on iframes based on their content.
+        <a href="http://github.com/house9/jquery-iframe-auto-height">http://github.com/house9/jquery-iframe-auto-height</a>
+      </p>
+
+      <div style="clear:both">
+        <div>
+          <div class="p">
+            Callback Testing, check the console for debug messages<br>
+            x-small is using hardcoded heights by browser override
+          </div>
+        </div>
+        <div>
+          <iframe src="./xsmall.html" class="column" scrolling="no" id="xsmall-iframe" style="height: 420px;" frameborder="0"></iframe>
+
+          <iframe style="height: 230px;" src="./small.html" class="column" scrolling="no" id="small-iframe" frameborder="0"></iframe>
+
+          <iframe style="height: 501px;" src="./medium.html" class="column" scrolling="no" id="medium-iframe" frameborder="0"></iframe>
+        </div>
+
+        <div style="clear:both; line-height: 0px; font-size: 0px">
+          &nbsp;
+        </div>
+        <p>
+          Clear iframe 2 (small-iframe) and then <a href="javascript:void(0)" id="resize-clicker">resize</a> it.
+        </p>
+      </div>
+
+      <div class="clear">
+        &nbsp;
+      </div>
+      <p>
+        More: <a href="./">Main</a> |
+        <a href="./index-with-pic.html">Another Pic</a> |
+        <a href="./index-dynamic.html">Dynamic</a> |
+        <a href="./index-min-height.html">Min-Height</a> |
+        <a href="./index-callback.html">Callback</a> |
+        <a href="./index-form.html">Form</a>
+      </p>
+      <p>
+        Original code by Nathan Smith, see <a href="http://sonspring.com/journal/jquery-iframe-sizing">original article</a>.
+      </p>
+      <div class="clear">
+        &nbsp;
+      </div>
+    </div>
+  </body>
+</html>

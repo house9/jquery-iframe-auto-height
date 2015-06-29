@@ -1,0 +1,79 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+
+
+ * require_tree . 
+*/
+/* line 1, ../../app/assets/stylesheets/layout.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 7, ../../app/assets/stylesheets/layout.css.scss */
+a {
+  color: #33c;
+  font-weight: bold;
+}
+
+/* line 13, ../../app/assets/stylesheets/layout.css.scss */
+body {
+  background: #fff;
+  color: #333;
+  font: 15px Arial, sans-serif;
+}
+
+/* line 20, ../../app/assets/stylesheets/layout.css.scss */
+#container {
+  margin: 0 auto;
+  padding: 20px 0 0;
+  width: 960px;
+}
+
+/* line 27, ../../app/assets/stylesheets/layout.css.scss */
+h1 {
+  font-size: 30px;
+  margin: 0 10px;
+  padding: 0 0 10px;
+  text-align: center;
+}
+
+/* line 35, ../../app/assets/stylesheets/layout.css.scss */
+p {
+  background: #ffc;
+  border: 1px solid #999;
+  margin: 0 10px 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* line 44, ../../app/assets/stylesheets/layout.css.scss */
+iframe {
+  margin: 0 10px 20px;
+}
+
+/* line 49, ../../app/assets/stylesheets/layout.css.scss */
+.photo {
+  width: 940px;
+}
+
+/* line 54, ../../app/assets/stylesheets/layout.css.scss */
+.column {
+  float: left;
+  width: 220px;
+}
+
+/* line 60, ../../app/assets/stylesheets/layout.css.scss */
+.clear {
+  clear: both;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* line 68, ../../app/assets/stylesheets/layout.css.scss */
+div.p {
+  padding: 10px;
+}

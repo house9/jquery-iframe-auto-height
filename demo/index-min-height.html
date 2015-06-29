@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>jQuery - iFrame Auto Height Plugin</title>
+    <link href="assets/application.css" media="screen" rel="stylesheet" type="text/css">
+
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="../vendor/jquery.browser.js"></script>
+    <script src="../dist/jquery-iframe-auto-height.js"></script>
+    <script>
+      jQuery(function() {
+        $('iframe').iframeAutoHeight({
+          debug: true,
+          minHeight: 480,
+          animate: true
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>
+        jQuery » iFrame Auto Height Plugin
+      </h1>
+      <p>
+        This <a href="http://jquery.com/">jQuery</a> plugin sets the height on iframes based on their content.
+        <a href="http://github.com/house9/jquery-iframe-auto-height">http://github.com/house9/jquery-iframe-auto-height</a>
+      </p>
+
+      <div style="clear:both">
+        <div style="float: left; width: 280px">
+          <div class="p">
+            This content is inside the container page. The iframe is to the right with a minHeight larger than the content.
+          </div>
+            <div class="p">
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+            </div>
+            <div class="p">
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps  over the lazy dog. The quick brown fox jumps over the lazy dog.
+            </div>
+            <div class="p">
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+              The quick brown fox jumps over the lazy dog. The quick brown fox
+              jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+            </div>
+        </div>
+        <div style="float: left">
+          <iframe style="height: 480px;" src="./xsmall.html" class="column" scrolling="no" frameborder="0"></iframe>
+        </div>
+        <div style="clear:both; line-height: 0px; font-size: 0px">
+          &nbsp;
+        </div>
+      </div>
+
+      <div class="clear">
+        &nbsp;
+      </div>
+      <p>
+        More: <a href="./">Main</a> |
+        <a href="./index-with-pic.html">Another Pic</a> |
+        <a href="./index-dynamic.html">Dynamic</a> |
+        <a href="./index-min-height.html">Min-Height</a> |
+        <a href="./index-callback.html">Callback</a> |
+        <a href="./index-form.html">Form</a>
+      </p>
+      <p>
+        Original code by Nathan Smith, see <a href="http://sonspring.com/journal/jquery-iframe-sizing">original article</a>.
+      </p>
+      <div class="clear">
+        &nbsp;
+      </div>
+    </div>
+  </body>
+</html>

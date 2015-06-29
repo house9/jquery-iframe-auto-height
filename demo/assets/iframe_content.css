@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ddd;
+  color: #333;
+  font: 11px Arial, sans-serif;
+  padding: 20px 20px 0;
+}
+
+a {
+  color: #33c;
+  font-weight: bold;
+}
+
+img {
+  display: block;
+}
+
+h2,
+p {
+  padding: 0 0 20px;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+p {
+  line-height: 1.5;
+}

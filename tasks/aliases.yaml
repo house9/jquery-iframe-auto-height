@@ -1,0 +1,10 @@
+default:
+  - build
+
+build:
+  - clean
+  - jshint:src
+  - lintspaces:src
+  - umd
+  - concat
+  - uglify

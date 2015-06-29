@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>jQuery - iFrame Auto Height Plugin</title>
+    <link href="assets/application.css" media="screen" rel="stylesheet" type="text/css">
+
+    <script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="../vendor/jquery.browser.js"></script>
+    <script src="../dist/jquery-iframe-auto-height.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>
+        jQuery » iFrame Auto Height Plugin
+      </h1>
+      <p>
+        This <a href="http://jquery.com/">jQuery</a> plugin sets the height on iframes based on their content.
+        <a href="http://github.com/house9/jquery-iframe-auto-height">http://github.com/house9/jquery-iframe-auto-height</a>
+      </p>
+
+      <p>
+        <a href="javascript:void(0);" id="load-static-large-link">Load large</a> |
+        <a href="javascript:void(0);" id="load-dynamic-medium-link">Dynamic medium</a> |
+        <a href="javascript:void(0);" id="remove-dynamic-iframe-link">Remove iframe</a>
+      </p>
+
+      <div id="iframe-container" style="border:1px solid black; background-color:gray">
+        <!-- load iframe here -->
+        Append Iframes here
+      </div>
+
+      <div class="clear" style="height: 30px">
+        &nbsp;
+      </div>
+
+      <div id="static-container" style="border:1px solid black; background-color:gray">
+        Iframe with changing src
+        <iframe style="height: 240px;" id="iframe-loader" src="./pic1.html" class="photo" scrolling="no" frameborder="0"></iframe>
+      </div>
+
+      <div class="clear" style="height: 30px">
+        &nbsp;
+      </div>
+
+      <div class="clear">
+        &nbsp;
+      </div>
+      <p>
+        More: <a href="./">Main</a> |
+        <a href="./index-with-pic.html">Another Pic</a> |
+        <a href="./index-dynamic.html">Dynamic</a> |
+        <a href="./index-min-height.html">Min-Height</a> |
+        <a href="./index-callback.html">Callback</a> |
+        <a href="./index-form.html">Form</a>
+      </p>
+      <p>
+        Original code by Nathan Smith, see <a href="http://sonspring.com/journal/jquery-iframe-sizing">original article</a>.
+      </p>
+      <div class="clear">
+        &nbsp;
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        var counter = 0;
+
+        // static iframe
+        $('#iframe-loader').iframeAutoHeight();
+        // click handling
+        $("#load-static-large-link").click(function () {
+          $("#iframe-loader").attr("src", "./large.html");
+        });
+
+        // dynamic handling
+        $("#load-dynamic-medium-link").click(function () {
+          var id = "iframe-medium-" + counter;
+          $("<iframe />", {
+            src: "./medium.html",
+            id: id,
+            frameborder: 0,
+            "class": "photo"
+          }).appendTo("#iframe-container");
+
+          $('#' + id).iframeAutoHeight({heightOffset: 40});
+          counter++;
+        });
+
+        $("#remove-dynamic-iframe-link").click(function () {
+          $("#iframe-container iframe").remove();
+        });
+      });
+    </script>
+  </body>
+</html>
