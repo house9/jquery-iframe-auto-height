@@ -18,3 +18,4 @@
 * Patrick Clark (https://github.com/hellopat)
 * SLaks (https://github.com/SLaks)
 * yiqing-95 (https://github.com/yiqing-95)
+* Vidmantas Norkus (https://github.com/gwcms)

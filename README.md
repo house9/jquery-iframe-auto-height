@@ -189,6 +189,11 @@ $('iframe').iframeAutoHeight({
 
 ## Changelog:
 
+2.0.1 / 2015-07-28
+
+* Added functionality to resize width
+* Check if iframe height is zero do delay - fix for firefox 47
+
 2.0.0 / 2015-06-28
 
 * Changes entire repo directory structure
